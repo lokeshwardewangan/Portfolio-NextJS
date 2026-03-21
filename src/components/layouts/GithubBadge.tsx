@@ -9,7 +9,7 @@ import { useGithubUser } from "@/hooks/useGithubUser";
 
 export const GithubBadge = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { data: user, isLoading } = useGithubUser("LokeshwarPrasad3");
+  const { data: user, isLoading } = useGithubUser("lokeshwardewangan");
 
   const handleHover = (state: boolean) => {
     setIsOpen(state);
@@ -18,7 +18,7 @@ export const GithubBadge = () => {
   if (isLoading || !user) {
     return (
       <a
-        href="https://github.com/LokeshwarPrasad3"
+        href="https://github.com/lokeshwardewangan"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-3 rounded-full bg-linear-to-r from-pink-500 to-purple-600 px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-200"

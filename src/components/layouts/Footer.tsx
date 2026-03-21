@@ -48,7 +48,7 @@ export const Footer = () => {
             <div className="mt-2 flex items-center gap-4">
               <TooltipProvider>
                 {[
-                  { icon: Github, href: "https://github.com/LokeshwarPrasad3", label: "GitHub" },
+                  { icon: Github, href: "https://github.com/lokeshwardewangan", label: "GitHub" },
                   {
                     icon: Linkedin,
                     href: "https://www.linkedin.com/in/lokeshwar-prasad-dewangan-7b2163211/",
@@ -56,7 +56,7 @@ export const Footer = () => {
                   },
                   {
                     icon: Instagram,
-                    href: "https://www.instagram.com/lokeshwarprasad1/",
+                    href: "https://www.instagram.com/lokeshwar.me/",
                     label: "Instagram",
                   },
                   { icon: Twitter, href: "https://twitter.com/LokeshwarPras17", label: "Twitter" },

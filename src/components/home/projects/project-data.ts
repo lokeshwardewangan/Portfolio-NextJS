@@ -29,7 +29,7 @@ export const FullStackProjectsArray: Project[] = [
       "AI SDK",
     ],
     liveLink: "https://qualifyrs.com",
-    repoLink: "https://github.com/LokeshwarPrasad3/",
+    repoLink: "https://github.com/lokeshwardewangan/",
     featured: true,
   },
   {
@@ -50,7 +50,7 @@ export const FullStackProjectsArray: Project[] = [
       "Redux",
     ],
     liveLink: "https://budgetter.lokeshwardewangan.in/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Budgetter-Webapp",
+    repoLink: "https://github.com/lokeshwardewangan/Budgetter-Webapp",
     featured: true,
   },
   {
@@ -62,7 +62,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["React", "Socket.io", "Node.js", "Express", "MongoDB"],
     liveLink: "https://pingpoint.netlify.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Real-Time-ChatApp",
+    repoLink: "https://github.com/lokeshwardewangan/Real-Time-ChatApp",
   },
   {
     id: "fs-4",
@@ -72,7 +72,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["Next.js", "AI SDK", "Google Gemini API", "Tailwind CSS"],
     liveLink: "https://assistant.lokeshwardewangan.in",
-    repoLink: "https://github.com/LokeshwarPrasad3/AI-Chat-Studio-NextApp",
+    repoLink: "https://github.com/lokeshwardewangan/AI-Chat-Studio-NextApp",
   },
   {
     id: "fs-7",
@@ -83,7 +83,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["React", "Tailwind", "Framer motion", "MongoDB", "Express"],
     liveLink: "https://makebirthday.netlify.app",
-    repoLink: "https://github.com/LokeshwarPrasad3/MakeBirthdayWish",
+    repoLink: "https://github.com/lokeshwardewangan/MakeBirthdayWish",
   },
   {
     id: "fs-8",
@@ -94,7 +94,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["ExpressJS", "HBS", "OpenWeather API", "CSS Modules"],
     liveLink: "https://weather-report-lokeshwar.vercel.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Real-Time-Weather-App",
+    repoLink: "https://github.com/lokeshwardewangan/Real-Time-Weather-App",
   },
   {
     id: "fs-5",
@@ -105,7 +105,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["React", "ExpressJS", "Firebase", "Razorpay", "Bootstrap"],
     liveLink: "https://canteen-webapp.netlify.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Attendance-Management-WebApp",
+    repoLink: "https://github.com/lokeshwardewangan/Attendance-Management-WebApp",
   },
   {
     id: "fs-6",
@@ -116,7 +116,7 @@ export const FullStackProjectsArray: Project[] = [
     category: "fullstack",
     techStack: ["React", "Node.js", "MongoDB", "ContextAPI"],
     liveLink: "https://college-attendances.netlify.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Attendance-Management-WebApp",
+    repoLink: "https://github.com/lokeshwardewangan/Attendance-Management-WebApp",
   },
 ];
 
@@ -130,7 +130,7 @@ export const ReactFrontendProjectsArray: Project[] = [
     category: "react",
     techStack: ["React", "Algorithms", "CSS Animations"],
     liveLink: "https://lokeshwar-dsa-visualize.netlify.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/DSA-Visualization-Project",
+    repoLink: "https://github.com/lokeshwardewangan/DSA-Visualization-Project",
   },
   {
     id: "react-2",
@@ -141,7 +141,7 @@ export const ReactFrontendProjectsArray: Project[] = [
     category: "react",
     techStack: ["React", "TailwindCSS"],
     liveLink: "https://ijsrgi.com",
-    repoLink: "https://github.com/LokeshwarPrasad3/College-Journal-Web",
+    repoLink: "https://github.com/lokeshwardewangan/College-Journal-Web",
   },
   {
     id: "react-3",
@@ -152,7 +152,7 @@ export const ReactFrontendProjectsArray: Project[] = [
     category: "react",
     techStack: ["React", "face-api.js"],
     liveLink: "https://livefacedetect.netlify.app",
-    repoLink: "https://github.com/LokeshwarPrasad3/Live-Face-Insights",
+    repoLink: "https://github.com/lokeshwardewangan/Live-Face-Insights",
   },
   {
     id: "react-4",
@@ -163,7 +163,7 @@ export const ReactFrontendProjectsArray: Project[] = [
     category: "react",
     techStack: ["React", "Bootstrap"],
     liveLink: "https://text-transform-tools.netlify.app/",
-    repoLink: "https://github.com/LokeshwarPrasad3/Text-Utils-React-Webite",
+    repoLink: "https://github.com/lokeshwardewangan/Text-Utils-React-Webite",
   },
   {
     id: "react-5",
@@ -175,7 +175,7 @@ export const ReactFrontendProjectsArray: Project[] = [
     techStack: ["React", "TypeScript", "Context API"],
     liveLink: "https://todo-list-lokeshwar.netlify.app/",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/My-Todo-App.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/My-Todo-App.html",
   },
 ];
 
@@ -189,7 +189,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript", "LocalStorage"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/online-notes",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/Online-Notes.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/Online-Notes.html",
   },
   {
     id: "js-2",
@@ -199,7 +199,7 @@ export const FrontendProjectsArray: Project[] = [
     category: "js",
     techStack: ["HTML", "CSS", "JavaScript", "Audio API"],
     liveLink: "#",
-    repoLink: "https://github.com/LokeshwarPrasad3/Clone-Music-Website",
+    repoLink: "https://github.com/lokeshwardewangan/Clone-Music-Website",
   },
   {
     id: "js-3",
@@ -210,7 +210,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "QR Library", "DOM Manipulation"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/qr-code-generator",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/QR-code-generator.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/QR-code-generator.html",
   },
   {
     id: "js-4",
@@ -221,7 +221,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "Date Object", "Intervals"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/alarm-clock",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/Alarm-Clock.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/Alarm-Clock.html",
   },
   {
     id: "js-5",
@@ -232,7 +232,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "CSS Grid", "Event Handling"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/my-calculator",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/My-Calculator.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/My-Calculator.html",
   },
   {
     id: "js-6",
@@ -243,7 +243,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "Fetch API", "Async/Await"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/random-joke-app",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/Random-Joke-App.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/Random-Joke-App.html",
   },
   {
     id: "js-7",
@@ -254,7 +254,7 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "Date API", "CSS Effects"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/clock-watch",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/Clock-Watch.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/Clock-Watch.html",
   },
   {
     id: "js-8",
@@ -275,6 +275,6 @@ export const FrontendProjectsArray: Project[] = [
     techStack: ["JavaScript", "IP API", "XHR"],
     liveLink: "https://lokeshwar-creatives-v0.netlify.app/html/show-my-ip",
     repoLink:
-      "https://github.com/LokeshwarPrasad3/my-portfolio-projects/blob/main/html/Show-My-IP.html",
+      "https://github.com/lokeshwardewangan/my-portfolio-projects/blob/main/html/Show-My-IP.html",
   },
 ];
