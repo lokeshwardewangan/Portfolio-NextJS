@@ -92,7 +92,6 @@ const TechCard = ({ name, slug }: { name: string; slug: string }) => {
         src={`https://skillicons.dev/icons?i=${slug}`}
         width={32}
         height={32}
-        unoptimized // skillicons.dev serves SVGs/images that might not need Next.js processing, and it's an external domain
       />
       <span className="text-[10px] font-medium sm:text-xs 2xl:text-sm dark:text-white">{name}</span>
     </div>

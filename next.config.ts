@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentDispositionType: "attachment",
     qualities: [75, 80, 85, 90, 100],
     remotePatterns: [
       { protocol: "https", hostname: "picsum.photos" },
@@ -10,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
     ],
   },
+  compress: true,
   productionBrowserSourceMaps: true,
   async headers() {
     return [

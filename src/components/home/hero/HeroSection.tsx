@@ -78,7 +78,7 @@ export const HeroSection = () => {
         <div className="relative z-10 flex w-full flex-col items-center justify-center gap-6 text-center lg:w-[55%] lg:items-start lg:pr-10 lg:text-left">
           <CometPath />
 
-          <div className="font-bree relative flex flex-col gap-2">
+          <div className="font-bree relative flex min-h-[100px] flex-col justify-center gap-2 sm:min-h-[120px] lg:min-h-[140px]">
             <span className="text-foreground block text-xl font-bold sm:text-2xl lg:text-3xl">
               Hey,
             </span>

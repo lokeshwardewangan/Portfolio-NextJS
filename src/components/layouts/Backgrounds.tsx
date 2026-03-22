@@ -36,7 +36,7 @@ export default function Backgrounds() {
     <>
       <DynamicBackground />
       {/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
-      <Meteors number={20} />
+      <Meteors number={10} />
     </>
   );
 }
