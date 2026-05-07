@@ -60,7 +60,7 @@ const experiences = [
   },
   {
     id: 2,
-    title: "Software Trainee (Internship)",
+    title: "Software Developer",
     company: "IJSRGI — Rungta Group Of Institutions",
     date: "Feb 2024",
     description: (
