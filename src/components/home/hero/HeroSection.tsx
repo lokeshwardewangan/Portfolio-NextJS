@@ -9,11 +9,31 @@ import { ToolButton } from "./ToolButton";
 import { FeaturedBadge } from "./FeaturedBadge";
 import { TechStackPills } from "./TechStackPills";
 import { TypedHeading } from "./TypedHeading";
-import { ShineBorder } from "@/components/ui/shine-border";
 import DecorativeImage1 from "@/assets/images/transition/decorative-bg-1.jpeg";
 import DecorativeImage2 from "@/assets/images/transition/decorative-bg-2.jpeg";
 
 const CometPath = dynamic(() => import("./CometPath"), { ssr: false });
+
+// 12-point polygons, all wound clockwise from the top.
+// Same vertex count lets motion interpolate vertex-by-vertex between shapes.
+// All shapes hug the box edges so the image stays maximally visible.
+const SHAPE_KEYFRAMES = [
+  // Rounded rectangle — the original resting shape (rounded-2xl equivalent)
+  "polygon(50% 0%, 95% 0%, 100% 5%, 100% 50%, 100% 95%, 95% 100%, 50% 100%, 5% 100%, 0% 95%, 0% 50%, 0% 5%, 5% 0%)",
+  // Asymmetric organic blob A
+  "polygon(45% 3%, 75% 6%, 95% 25%, 98% 50%, 92% 78%, 70% 95%, 45% 98%, 22% 92%, 5% 75%, 2% 48%, 10% 22%, 25% 5%)",
+  // Vertical hexagon (point top/bottom)
+  "polygon(50% 0%, 71.65% 12.5%, 93.3% 25%, 93.3% 50%, 93.3% 75%, 71.65% 87.5%, 50% 100%, 28.35% 87.5%, 6.7% 75%, 6.7% 50%, 6.7% 25%, 28.35% 12.5%)",
+  // Soft pebble — bulgy rounded silhouette, edges touch the box at mid-points
+  "polygon(50% 1%, 78% 4%, 95% 20%, 100% 48%, 96% 75%, 80% 95%, 50% 99%, 20% 95%, 4% 75%, 0% 48%, 5% 20%, 22% 4%)",
+  // Asymmetric organic blob B — different bulge pattern from A
+  "polygon(55% 4%, 82% 7%, 92% 28%, 99% 52%, 88% 76%, 68% 94%, 42% 97%, 18% 88%, 4% 68%, 8% 42%, 18% 18%, 32% 8%)",
+  // Portrait oval / squircle (smooth circle approximation, touches all 4 edges)
+  "polygon(50% 0%, 75% 6.7%, 93.3% 25%, 100% 50%, 93.3% 75%, 75% 93.3%, 50% 100%, 25% 93.3%, 6.7% 75%, 0% 50%, 6.7% 25%, 25% 6.7%)",
+];
+
+const SHAPE_LOOP = [...SHAPE_KEYFRAMES, SHAPE_KEYFRAMES[0]];
+const SHAPE_DURATION = 24;
 
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
@@ -234,25 +254,42 @@ export const HeroSection = () => {
               <div className="from-background/90 via-background/40 absolute inset-0 bg-linear-to-bl to-transparent" />
             </motion.div>
 
-            {/* Main Center Image */}
+            {/* Main Center Image — clip-path morph between blob, hexagon, octagon, diamond, squircle */}
             <motion.div
-              style={{ rotateX: tiltImg, rotateY: tiltImg }}
-              className="group relative z-20 aspect-3/4 w-[200px] overflow-hidden rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.3)] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px]"
+              style={{
+                rotateX: tiltImg,
+                rotateY: tiltImg,
+                filter:
+                  "drop-shadow(0 0 20px rgba(168,85,247,0.4)) drop-shadow(0 0 40px rgba(254,143,181,0.25))",
+              }}
+              animate={{ clipPath: SHAPE_LOOP }}
+              transition={{
+                duration: SHAPE_DURATION,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="group relative z-20 aspect-3/4 w-[200px] will-change-[clip-path,filter] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px]"
             >
-              {/* Shine Border specific implementation */}
-              <ShineBorder
-                className="absolute inset-0 z-0 p-px"
-                shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-                duration={10}
-                borderWidth={1.5}
+              {/* Rotating conic shine — clipped to polygon, exposed as a 2px border by the inset child */}
+              <div
+                style={{
+                  backgroundImage: "conic-gradient(from 0deg, #A07CFE, #FE8FB5, #FFBE7B, #A07CFE)",
+                }}
+                className="absolute inset-0 transform-gpu animate-[spin_10s_linear_infinite] will-change-transform"
               />
 
-              {/* Inner content wrapper */}
-              <div className="bg-background absolute inset-[2px] overflow-hidden rounded-[14px]">
+              {/* Inner content — same clip-path, inset 2px so the conic ring shows as the border */}
+              <motion.div
+                animate={{ clipPath: SHAPE_LOOP }}
+                transition={{
+                  duration: SHAPE_DURATION,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="bg-background absolute inset-[2px] overflow-hidden"
+              >
                 <ImageTransition />
-              </div>
-
-              <div className="pointer-events-none absolute inset-[2px] rounded-[14px] border border-white/5 opacity-30 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]" />
+              </motion.div>
             </motion.div>
           </div>
         </div>

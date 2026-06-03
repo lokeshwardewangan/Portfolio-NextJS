@@ -26,8 +26,8 @@ export const ImageTransition = () => {
   }, []);
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-2xl">
-      <div className="pointer-events-none absolute inset-0 z-20 bg-linear-to-tr from-pink-600/30 via-transparent to-transparent mix-blend-overlay" />
+    <div className="relative h-full w-full overflow-hidden rounded-[inherit]">
+      <div className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] bg-linear-to-tr from-pink-600/30 via-transparent to-transparent mix-blend-overlay" />
 
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div

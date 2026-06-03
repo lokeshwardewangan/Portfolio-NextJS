@@ -33,9 +33,9 @@ export const StatsSticker = () => {
                 <FolderGit2 className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-foreground text-2xl font-bold">15+</p>
+                <p className="text-foreground text-2xl font-bold">10+</p>
                 <p className="text-muted-foreground text-sm font-medium tracking-wider uppercase">
-                  Projects Done
+                  Projects Built
                 </p>
               </div>
             </div>
