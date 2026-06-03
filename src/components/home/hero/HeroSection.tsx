@@ -1,296 +1,32 @@
 "use client";
 
-import { motion, useTransform, useSpring, useMotionValue } from "motion/react";
-import { ArrowRight, Mail } from "lucide-react";
-import Image from "next/image";
-import dynamic from "next/dynamic";
-import { ImageTransition } from "./ImageTransition";
-import { ToolButton } from "./ToolButton";
-import { FeaturedBadge } from "./FeaturedBadge";
-import { TechStackPills } from "./TechStackPills";
-import { TypedHeading } from "./TypedHeading";
-import DecorativeImage1 from "@/assets/images/transition/decorative-bg-1.jpeg";
-import DecorativeImage2 from "@/assets/images/transition/decorative-bg-2.jpeg";
-
-const CometPath = dynamic(() => import("./CometPath"), { ssr: false });
-
-// 12-point polygons, all wound clockwise from the top.
-// Same vertex count lets motion interpolate vertex-by-vertex between shapes.
-// All shapes hug the box edges so the image stays maximally visible.
-const SHAPE_KEYFRAMES = [
-  // Rounded rectangle — the original resting shape (rounded-2xl equivalent)
-  "polygon(50% 0%, 95% 0%, 100% 5%, 100% 50%, 100% 95%, 95% 100%, 50% 100%, 5% 100%, 0% 95%, 0% 50%, 0% 5%, 5% 0%)",
-  // Asymmetric organic blob A
-  "polygon(45% 3%, 75% 6%, 95% 25%, 98% 50%, 92% 78%, 70% 95%, 45% 98%, 22% 92%, 5% 75%, 2% 48%, 10% 22%, 25% 5%)",
-  // Vertical hexagon (point top/bottom)
-  "polygon(50% 0%, 71.65% 12.5%, 93.3% 25%, 93.3% 50%, 93.3% 75%, 71.65% 87.5%, 50% 100%, 28.35% 87.5%, 6.7% 75%, 6.7% 50%, 6.7% 25%, 28.35% 12.5%)",
-  // Soft pebble — bulgy rounded silhouette, edges touch the box at mid-points
-  "polygon(50% 1%, 78% 4%, 95% 20%, 100% 48%, 96% 75%, 80% 95%, 50% 99%, 20% 95%, 4% 75%, 0% 48%, 5% 20%, 22% 4%)",
-  // Asymmetric organic blob B — different bulge pattern from A
-  "polygon(55% 4%, 82% 7%, 92% 28%, 99% 52%, 88% 76%, 68% 94%, 42% 97%, 18% 88%, 4% 68%, 8% 42%, 18% 18%, 32% 8%)",
-  // Portrait oval / squircle (smooth circle approximation, touches all 4 edges)
-  "polygon(50% 0%, 75% 6.7%, 93.3% 25%, 100% 50%, 93.3% 75%, 75% 93.3%, 50% 100%, 25% 93.3%, 6.7% 75%, 0% 50%, 6.7% 25%, 25% 6.7%)",
-];
-
-const SHAPE_LOOP = [...SHAPE_KEYFRAMES, SHAPE_KEYFRAMES[0]];
-const SHAPE_DURATION = 24;
+import { useMotionValue, useSpring } from "motion/react";
+import { HeroCopy } from "./HeroCopy";
+import { HeroOrbitDecorations } from "./HeroOrbitDecorations";
+import { HeroStackedImages } from "./HeroStackedImages";
+import { MorphingImageFrame } from "./MorphingImageFrame";
 
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
   const smoothX = useSpring(mouseX, { stiffness: 30, damping: 50 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    mouseX.set(clientX - centerX);
-    mouseY.set(clientY - centerY);
+    mouseX.set(e.clientX - window.innerWidth / 2);
   };
-
-  // Parallax Transforms
-  const moveBack = useTransform(smoothX, (x) => x * 0.015);
-  const tiltImg = useTransform(smoothX, [-800, 800], [-2, 2]);
 
   return (
     <section
       onMouseMove={handleMouseMove}
       className="scale_layout relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden px-6 pt-16 pb-20 md:pt-20 lg:px-12 lg:pt-14 lg:pb-0 xl:pt-0"
     >
-      {/* --- Subtle Background Noise/Gradient --- */}
-      {/* <div className="absolute inset-0 -z-50 pointer-events-none opacity-20">
-                <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-[140px]" />
-                <div className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-pink-500/5 rounded-full blur-[140px]" />
-            </div> */}
-
       <div className="mx-auto flex h-full w-full max-w-7xl flex-col-reverse items-center justify-center lg:flex-row lg:justify-between lg:gap-12">
-        <div className="relative z-10 flex w-full flex-col items-center justify-center gap-6 text-center lg:w-[55%] lg:items-start lg:pr-10 lg:text-left">
-          <CometPath />
-
-          <TypedHeading />
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-muted-foreground max-w-xl text-base leading-relaxed sm:text-[1.05rem]"
-          >
-            I’m Lokeshwar Prasad Dewangan, Full-stack engineer building{" "}
-            <span className="text-foreground font-semibold">production-grade web systems</span> —
-            end-to-end, with a sharp focus on{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text font-semibold text-transparent">
-              performance, scalability & clean architecture.
-            </span>
-          </motion.p>
-
-          {/* Tech stack pills */}
-          <TechStackPills />
-
-          <FeaturedBadge />
-
-          {/* 3. CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap items-center justify-center gap-4 rounded-full pt-0 lg:justify-start"
-          >
-            <ToolButton icon={Mail}>Hire Me</ToolButton>
-            <ToolButton variant="secondary" icon={ArrowRight}>
-              Message
-            </ToolButton>
-
-            <div className="bg-border/40 mx-2 hidden h-8 w-px sm:block" />
-          </motion.div>
-        </div>
+        <HeroCopy />
 
         <div className="perspective-1000 relative flex h-[400px] w-full max-w-[300px] items-center justify-center sm:h-[550px] sm:w-[400px] sm:max-w-xl lg:left-0 lg:h-[600px] lg:w-[45%] lg:max-w-none lg:justify-center">
           <div className="relative flex items-center justify-center">
-            {/* SVG Background Animations */}
-            <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-              <svg
-                className="text-primary absolute h-[180%] max-h-[700px] w-[180%] max-w-[700px] transform-gpu animate-[spin_40s_linear_infinite] opacity-30 will-change-transform"
-                viewBox="0 0 100 100"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="48"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.2"
-                  strokeDasharray="1 3"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
-                  strokeDasharray="4 4"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="30"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.2"
-                  strokeDasharray="2 6"
-                />
-              </svg>
-
-              <svg
-                className="absolute h-[200%] max-h-[800px] w-[200%] max-w-[800px] transform-gpu animate-[spin_50s_linear_infinite_reverse] text-pink-500 opacity-20 will-change-transform"
-                viewBox="0 0 100 100"
-              >
-                <ellipse
-                  cx="50"
-                  cy="50"
-                  rx="45"
-                  ry="10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.3"
-                  transform="rotate(30 50 50)"
-                />
-                <ellipse
-                  cx="50"
-                  cy="50"
-                  rx="45"
-                  ry="10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.3"
-                  transform="rotate(-30 50 50)"
-                />
-                <ellipse
-                  cx="50"
-                  cy="50"
-                  rx="45"
-                  ry="10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.3"
-                  transform="rotate(90 50 50)"
-                />
-              </svg>
-
-              <motion.div
-                animate={{ y: [-20, 20, -20], rotate: [0, 90, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-12 -right-8 text-yellow-500/50 md:-right-16"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M12 2v20M2 12h20" />
-                </svg>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [20, -20, 20], rotate: [0, -90, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-44 -left-12 text-cyan-500/50 md:-left-16"
-              >
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  <path d="M2 12h20" />
-                </svg>
-              </motion.div>
-            </div>
-
-            {/* Stacked Image 1 (Left) */}
-            <motion.div
-              animate={{ y: [-10, 10, -10], rotate: [-8, -4, -8] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-              style={{ x: moveBack }}
-              className="pointer-events-none absolute -top-3 -left-10 z-10 hidden aspect-3/4 w-[200px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl md:block xl:-left-20 xl:w-[160px]"
-            >
-              <Image
-                src={DecorativeImage1}
-                alt="Decorative background"
-                fill
-                sizes="(max-width: 1280px) 220px, 160px"
-                placeholder="blur"
-                priority
-                fetchPriority="high"
-                className="object-cover opacity-80 grayscale transition-opacity duration-500 hover:grayscale-0"
-              />
-              <div className="from-background/90 via-background/40 absolute inset-0 bg-linear-to-tr to-transparent" />
-            </motion.div>
-
-            {/* Stacked Image 2 (Right) */}
-            <motion.div
-              animate={{ y: [10, -10, 10], rotate: [8, 4, 8] }}
-              transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-              style={{ x: moveBack }}
-              className="pointer-events-none absolute -right-10 -bottom-8 z-10 hidden aspect-3/4 w-[220px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl md:block xl:-right-20 xl:w-[160px]"
-            >
-              <Image
-                src={DecorativeImage2}
-                alt="Decorative background"
-                fill
-                sizes="(max-width: 1280px) 220px, 160px"
-                placeholder="blur"
-                className="object-cover opacity-80 mix-blend-multiply grayscale dark:mix-blend-screen"
-                priority
-                fetchPriority="high"
-              />
-              <div className="from-background/90 via-background/40 absolute inset-0 bg-linear-to-bl to-transparent" />
-            </motion.div>
-
-            {/* Main Center Image — clip-path morph between blob, hexagon, octagon, diamond, squircle */}
-            <motion.div
-              style={{
-                rotateX: tiltImg,
-                rotateY: tiltImg,
-                filter:
-                  "drop-shadow(0 0 20px rgba(168,85,247,0.4)) drop-shadow(0 0 40px rgba(254,143,181,0.25))",
-              }}
-              animate={{ clipPath: SHAPE_LOOP }}
-              transition={{
-                duration: SHAPE_DURATION,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="group relative z-20 aspect-3/4 w-[200px] will-change-[clip-path,filter] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px]"
-            >
-              {/* Rotating conic shine — clipped to polygon, exposed as a 2px border by the inset child */}
-              <div
-                style={{
-                  backgroundImage: "conic-gradient(from 0deg, #A07CFE, #FE8FB5, #FFBE7B, #A07CFE)",
-                }}
-                className="absolute inset-0 transform-gpu animate-[spin_10s_linear_infinite] will-change-transform"
-              />
-
-              {/* Inner content — same clip-path, inset 2px so the conic ring shows as the border */}
-              <motion.div
-                animate={{ clipPath: SHAPE_LOOP }}
-                transition={{
-                  duration: SHAPE_DURATION,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="bg-background absolute inset-[2px] overflow-hidden"
-              >
-                <ImageTransition />
-              </motion.div>
-            </motion.div>
+            <HeroOrbitDecorations />
+            <HeroStackedImages smoothX={smoothX} />
+            <MorphingImageFrame smoothX={smoothX} />
           </div>
         </div>
       </div>
