@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, MotionValue, useTransform } from "motion/react";
+import { motion, MotionValue, useReducedMotion, useTransform } from "motion/react";
 import { ImageTransition } from "./ImageTransition";
 
 const SHAPES = [
@@ -21,22 +21,33 @@ const SHINE_GRADIENT = "conic-gradient(from 0deg, #A07CFE, #FE8FB5, #FFBE7B, #A0
 type Props = { smoothX: MotionValue<number> };
 
 export const MorphingImageFrame = ({ smoothX }: Props) => {
+  const reduced = useReducedMotion();
   const tilt = useTransform(smoothX, [-800, 800], [-2, 2]);
+
+  const morphAnimate = reduced ? undefined : { clipPath: SHAPE_LOOP };
+  const morphTransition = reduced ? undefined : SHAPE_TRANSITION;
+  const staticShape = reduced ? { clipPath: SHAPES[0] } : undefined;
 
   return (
     <motion.div
-      style={{ rotateX: tilt, rotateY: tilt, filter: GLOW }}
-      animate={{ clipPath: SHAPE_LOOP }}
-      transition={SHAPE_TRANSITION}
+      style={{
+        rotateX: reduced ? 0 : tilt,
+        rotateY: reduced ? 0 : tilt,
+        filter: GLOW,
+        ...staticShape,
+      }}
+      animate={morphAnimate}
+      transition={morphTransition}
       className="group relative z-20 aspect-3/4 w-[200px] will-change-[clip-path,filter] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] 2xl:w-[320px]"
     >
       <div
         style={{ backgroundImage: SHINE_GRADIENT }}
-        className="absolute inset-0 transform-gpu animate-[spin_10s_linear_infinite] will-change-transform"
+        className={`absolute inset-0 transform-gpu will-change-transform ${reduced ? "" : "animate-[spin_10s_linear_infinite]"}`}
       />
       <motion.div
-        animate={{ clipPath: SHAPE_LOOP }}
-        transition={SHAPE_TRANSITION}
+        animate={morphAnimate}
+        transition={morphTransition}
+        style={staticShape}
         className="bg-background absolute inset-[2px] overflow-hidden"
       >
         <ImageTransition />

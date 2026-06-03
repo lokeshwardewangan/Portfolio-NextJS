@@ -46,7 +46,7 @@ export const ImageTransition = () => {
             alt={`Slideshow Image ${index + 1}`}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 300px, 350px"
+            sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, (max-width: 1024px) 260px, (max-width: 1280px) 280px, (max-width: 1536px) 300px, 320px"
             priority={index === 0}
             fetchPriority={index === 0 ? "high" : "auto"}
           />

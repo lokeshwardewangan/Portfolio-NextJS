@@ -2,7 +2,7 @@
 
 import { useChat, type UIMessage } from "@ai-sdk/react";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Loader2 } from "lucide-react";
 import { SuggestionChips } from "./SuggestionChips";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
