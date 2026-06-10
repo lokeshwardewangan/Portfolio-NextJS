@@ -14,12 +14,9 @@ const TrafficChart = () => {
 
   if (isLoading) return <ChartSkeleton />;
 
-  // Transform backend data to chart series
-  // Ensure we have data or fallback to empty array
-  // Sort by month ascending to ensure chronological order
-  const monthlyData = [...(analytics?.monthlyTraffic || [])].sort((a, b) =>
-    a.month.localeCompare(b.month)
-  );
+  const monthlyData = [...(analytics?.monthlyTraffic || [])]
+    .sort((a, b) => a.month.localeCompare(b.month))
+    .slice(-6);
 
   const series = [
     {

@@ -1,13 +1,13 @@
-import { subMonths, format, addDays } from "date-fns";
+import { subMonths, format, addDays, startOfMonth } from "date-fns";
 
 export const GA_ANALYTICS_START_DATE = "2025-10-26";
 
 /**
- * Returns GA-safe date range for last N months
+ * GA-safe date range covering exactly N monthly buckets (current month + N-1 prior).
  */
 export function getLastNMonthsRange(months: number) {
   const end = new Date();
-  const start = subMonths(end, months);
+  const start = startOfMonth(subMonths(end, months - 1));
 
   return {
     startDate: format(start, "yyyy-MM-dd"),
