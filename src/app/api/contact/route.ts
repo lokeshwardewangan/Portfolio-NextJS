@@ -2,15 +2,13 @@ import { NextResponse } from "next/server";
 import Message from "@/models/Message";
 import { contactSchema } from "@/schemas/contact";
 import { connectDB } from "@/lib/db";
+import { sendContactConfirmation } from "@/lib/email/send-contact";
 
 export async function POST(req: Request) {
   try {
-    // Ensure DB connection
     await connectDB();
 
     const body = await req.json();
-
-    // Validate data using Zod
     const validation = contactSchema.safeParse(body);
 
     if (!validation.success) {
@@ -22,12 +20,10 @@ export async function POST(req: Request) {
 
     const { name, email, subject, message } = validation.data;
 
-    // Create new message in MongoDB
-    const newMessage = await Message.create({
-      name,
-      email,
-      subject,
-      message,
+    const newMessage = await Message.create({ name, email, subject, message });
+
+    sendContactConfirmation({ name, email, subject, message }).catch((emailError) => {
+      console.error("Contact confirmation email failed:", emailError);
     });
 
     return NextResponse.json(
