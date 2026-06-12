@@ -46,7 +46,7 @@ export default function RootLayout({
           <QueryProvider>
             <TooltipProvider>
               <TopNavbar />
-              <Toaster position="top-center" richColors />
+              <Toaster />
               <Backgrounds />
               {/* <ScrollToTop /> */}
               <BugButton />
