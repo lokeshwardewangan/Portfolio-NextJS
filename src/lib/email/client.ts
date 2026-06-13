@@ -1,10 +1,18 @@
 import { Resend } from "resend";
 
-if (!process.env.RESEND_API_KEY) {
-  console.warn("RESEND_API_KEY is missing — contact emails will not be sent.");
-}
+let cachedResend: Resend | null = null;
 
-export const resend = new Resend(process.env.RESEND_API_KEY || "");
+export function getResend(): Resend {
+  if (cachedResend) return cachedResend;
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is missing — cannot send email.");
+  }
+
+  cachedResend = new Resend(apiKey);
+  return cachedResend;
+}
 
 export const EMAIL_FROM = "Lokeshwar Dewangan <contact@lokeshwardewangan.in>";
 export const EMAIL_ADMIN = "lokeshwar.prasad.cse@gmail.com";

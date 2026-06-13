@@ -27,3 +27,4 @@ jobs:
         run: bun run build
         env:
           MONGO_URI: ${{ secrets.MONGO_URI || 'mongodb://localhost:27017/dummy' }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY || 're_dummy_build_key' }}

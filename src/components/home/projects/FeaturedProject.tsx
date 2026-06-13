@@ -40,8 +40,8 @@ export const FeaturedProject = ({ project, index }: { project: Project; index: n
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        {/* Links Overlay (Visible on Hover for Desktop, always accessible) */}
-        <div className="absolute right-4 bottom-4 z-20 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        {/* Links — always visible on mobile, hover-reveal on desktop */}
+        <div className="absolute right-3 bottom-3 z-20 transition-all duration-300 md:right-4 md:bottom-4 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
           <ProjectLinks
             liveLink={project.liveLink}
             repoLink={project.repoLink}

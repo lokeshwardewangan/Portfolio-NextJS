@@ -71,6 +71,10 @@ const technologies = [
     slug: "mongodb",
   },
   {
+    name: "Redis",
+    slug: "redis",
+  },
+  {
     name: "AWS",
     slug: "aws",
   },

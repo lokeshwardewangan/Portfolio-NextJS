@@ -43,8 +43,18 @@ export const HorizontalScrollSection = ({ projects }: { projects: Project[] }) =
                 />
                 <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/40" />
 
-                {/* Links Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100">
+                {/* Mobile: bottom gradient + corner links (always visible) */}
+                <div className="absolute inset-x-0 bottom-0 z-20 flex justify-end bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 md:hidden">
+                  <ProjectLinks
+                    liveLink={project.liveLink}
+                    repoLink={project.repoLink}
+                    title={project.title}
+                    className="scale-90"
+                  />
+                </div>
+
+                {/* Desktop: full blur overlay on hover */}
+                <div className="absolute inset-0 hidden items-center justify-center gap-2 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100 md:flex">
                   <ProjectLinks
                     liveLink={project.liveLink}
                     repoLink={project.repoLink}

@@ -46,8 +46,18 @@ export const ReactProjects = ({ projects }: { projects: Project[] }) => {
               quality={85}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-xs transition-opacity duration-300 group-hover:opacity-100">
+            {/* Mobile: bottom gradient + corner links (always visible) */}
+            <div className="absolute inset-x-0 bottom-0 z-20 flex justify-end bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 md:hidden">
+              <ProjectLinks
+                liveLink={project.liveLink}
+                repoLink={project.repoLink}
+                title={project.title}
+                className="scale-90"
+              />
+            </div>
+
+            {/* Desktop: full blur overlay on hover */}
+            <div className="absolute inset-0 hidden items-center justify-center bg-black/60 opacity-0 backdrop-blur-xs transition-opacity duration-300 group-hover:opacity-100 md:flex">
               <ProjectLinks
                 liveLink={project.liveLink}
                 repoLink={project.repoLink}
