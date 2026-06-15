@@ -15,7 +15,7 @@ export const FullStackProjectsArray: Project[] = [
     id: "fs-1",
     title: "SiteLense",
     description:
-      "Production-grade website auditing SaaS built on Lighthouse. Delivers real-time SEO, performance, and accessibility insights with Next.js and scalable API architecture.",
+      "Production-grade website auditing SaaS self-hosted on AWS EC2 (t3.small). Real-time Lighthouse-powered SEO, performance, and accessibility audits at scale.",
     image: "/projects/sitelense.png",
     category: "fullstack",
     techStack: [
@@ -30,6 +30,8 @@ export const FullStackProjectsArray: Project[] = [
       "Axios",
       "Bun",
       "Lighthouse",
+      "AWS",
+      "AWS EC2",
     ],
     liveLink: "https://sitelense.lokeshwardewangan.in/",
     repoLink: "https://github.com/lokeshwardewangan/SiteLense",
@@ -39,7 +41,7 @@ export const FullStackProjectsArray: Project[] = [
     id: "fs-2",
     title: "Trimly",
     description:
-      "Production URL shortener deployed on AWS with end-to-end click analytics and geographic tracking. Architected with Next.js, PostgreSQL, and Prisma for reliability at scale.",
+      "Production URL shortener with end-to-end click analytics, geographic tracking, and a real-time dashboard. Built on Next.js, PostgreSQL, and Prisma.",
     image: "/projects/trimly.png",
     category: "fullstack",
     techStack: [
@@ -49,7 +51,6 @@ export const FullStackProjectsArray: Project[] = [
       "Tailwind CSS",
       "Prisma",
       "PostgreSQL",
-      "AWS",
       "TanStack Query",
       "Zod",
       "Bun",
@@ -113,14 +114,27 @@ export const FullStackProjectsArray: Project[] = [
   },
   {
     id: "fs-6",
-    title: "AI Chat Studio",
+    title: "Nexus AI",
     description:
-      "High-performance conversational interface integrating Google Gemini. Optimized for rapid, stateful context generation at scale.",
+      "Production AI workspace with 14 specialized assistants and document RAG. Multi-LLM routing across Gemini, GPT, and Claude with auto-fallback, backed by Supabase pgvector.",
     image: "/projects/chatbot.svg",
     category: "fullstack",
-    techStack: ["Next.js", "AI SDK", "Google Gemini API", "Tailwind CSS"],
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "AI SDK",
+      "Gemini",
+      "OpenAI",
+      "Claude",
+      "Supabase",
+      "pgvector",
+      "TanStack Query",
+      "Zod",
+    ],
     liveLink: "https://assistant.lokeshwardewangan.in",
-    repoLink: "https://github.com/lokeshwardewangan/AI-Chat-Studio-NextApp",
+    repoLink: "https://github.com/lokeshwardewangan/nexus-ai",
   },
   {
     id: "fs-7",
@@ -169,6 +183,18 @@ export const FullStackProjectsArray: Project[] = [
 ];
 
 export const ReactFrontendProjectsArray: Project[] = [
+  {
+    id: "typing-test",
+    title: "Type — Typing Test",
+    description:
+      "Hand-coded typing test in pure JS — no AI, no frameworks. Real-time WPM, custom cursor logic, and a smooth, distraction-free typing flow.",
+    image: "/projects/typing-test.png",
+    category: "js",
+    techStack: ["JavaScript", "HTML", "CSS", "DOM API", "Mobile UX"],
+    liveLink: "https://type.lokeshwardewangan.in",
+    repoLink: "https://github.com/lokeshwardewangan/typing-test",
+    featured: true,
+  },
   {
     id: "react-1",
     title: "DSA Visualization",

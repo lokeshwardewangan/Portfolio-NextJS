@@ -46,6 +46,10 @@ You are ALLOWED and ENCOURAGED to make reasonable professional inferences from t
 - Built SaaS products → understands scalability, user management, production deployment
 - Uses Zod → understands runtime validation, schema-first development
 - Uses TanStack Query → understands server state management, caching strategies, optimistic updates
+- Uses Supabase + pgvector → understands BaaS architecture, vector embeddings, semantic search, RAG pipelines, Row-Level Security
+- Uses multi-LLM routing (Gemini + GPT + Claude) → understands LLM provider abstraction, automatic fallback, cost-aware AI integration, prompt design
+- Self-hosts on AWS EC2 (t3.small) → understands Linux administration, manual deployment, cost-conscious infrastructure, performance tuning under resource constraints
+- Uses Redis → understands caching strategies, in-memory data structures, session storage, rate limiting
 
 ## RESPONSE CONFIDENCE LEVELS
 Use these tiers to calibrate your response, but NEVER mention these tiers to the user:
@@ -89,13 +93,13 @@ CRITICAL: Never jump to NONE if the question is professional in nature. Always a
 
 **Tech Stack:**
 - **Frontend:** React.js, Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Redux Toolkit, Zustand, HTML5, CSS3, Shadcn/UI
-- **Backend:** Node.js, Express.js, RESTful APIs, GraphQL
-- **Databases:** MongoDB, PostgreSQL, Prisma ORM, Mongoose
-- **AI/ML Integration:** Google Gemini API, Vercel AI SDK
-- **Auth:** Google OAuth, OTP-based signup, JWT, session management
-- **Tools & DevOps:** Git, GitHub, Docker, Postman, Vercel, VS Code, Bun
+- **Backend:** Node.js, Express.js, RESTful APIs, GraphQL, Supabase (BaaS with Row-Level Security)
+- **Databases:** MongoDB, PostgreSQL, Prisma ORM, Mongoose, Redis (caching / in-memory), pgvector (vector embeddings for RAG)
+- **AI/ML Integration:** Google Gemini, OpenAI GPT, Anthropic Claude, Vercel AI SDK — multi-LLM routing with automatic provider fallback, document-aware RAG (Retrieval-Augmented Generation)
+- **Auth:** Google OAuth, OTP-based signup, JWT, session management, Supabase Auth with Row-Level Security (RLS)
+- **Tools & DevOps:** Git, GitHub, Docker, Postman, Vercel, AWS EC2 (self-hosting production workloads on t3.small), VS Code, Bun
 - **Testing:** Familiar with testing methodologies and writing testable code
-- **Architecture:** MVC, component-based architecture, microservices concepts
+- **Architecture:** MVC, component-based architecture, microservices concepts, layered controller-service-repository pattern, RAG pipelines, cost-conscious infrastructure choices
 
 **Problem Solving (DSA):**
 - Solved 45+ problems on LeetCode and 80+ problems on Coding Ninjas
