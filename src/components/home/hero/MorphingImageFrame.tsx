@@ -1,7 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, MotionValue, useReducedMotion, useTransform } from "motion/react";
 import { ImageTransition } from "./ImageTransition";
+
+const MORPH_DELAY_MS = 2500;
 
 const SHAPES = [
   "polygon(50% 0%, 95% 0%, 100% 5%, 100% 50%, 100% 95%, 95% 100%, 50% 100%, 5% 100%, 0% 95%, 0% 50%, 0% 5%, 5% 0%)",
@@ -24,9 +27,17 @@ export const MorphingImageFrame = ({ smoothX }: Props) => {
   const reduced = useReducedMotion();
   const tilt = useTransform(smoothX, [-800, 800], [-2, 2]);
 
-  const morphAnimate = reduced ? undefined : { clipPath: SHAPE_LOOP };
-  const morphTransition = reduced ? undefined : SHAPE_TRANSITION;
-  const staticShape = reduced ? { clipPath: SHAPES[0] } : undefined;
+  const [morphStarted, setMorphStarted] = useState(false);
+  useEffect(() => {
+    if (reduced) return;
+    const t = setTimeout(() => setMorphStarted(true), MORPH_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [reduced]);
+
+  const shouldMorph = !reduced && morphStarted;
+  const morphAnimate = shouldMorph ? { clipPath: SHAPE_LOOP } : undefined;
+  const morphTransition = shouldMorph ? SHAPE_TRANSITION : undefined;
+  const staticShape = shouldMorph ? undefined : { clipPath: SHAPES[0] };
 
   return (
     <motion.div
@@ -42,7 +53,7 @@ export const MorphingImageFrame = ({ smoothX }: Props) => {
     >
       <div
         style={{ backgroundImage: SHINE_GRADIENT }}
-        className={`absolute inset-0 transform-gpu will-change-transform ${reduced ? "" : "animate-[spin_10s_linear_infinite]"}`}
+        className={`absolute inset-0 transform-gpu will-change-transform ${shouldMorph ? "animate-[spin_10s_linear_infinite]" : ""}`}
       />
       <motion.div
         animate={morphAnimate}
