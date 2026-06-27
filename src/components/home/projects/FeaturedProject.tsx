@@ -67,12 +67,9 @@ export const FeaturedProject = ({ project, index }: { project: Project; index: n
         </p>
 
         <div className="mt-auto flex flex-wrap gap-2">
-          {project.techStack.slice(0, 4).map((tech) => (
+          {project.techStack.map((tech) => (
             <TechBadge key={tech} name={tech} small />
           ))}
-          {project.techStack.length > 4 && (
-            <span className="text-xs text-white/40">+{project.techStack.length - 4}</span>
-          )}
         </div>
       </div>
     </motion.div>

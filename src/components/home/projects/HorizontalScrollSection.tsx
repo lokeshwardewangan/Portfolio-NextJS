@@ -69,8 +69,8 @@ export const HorizontalScrollSection = ({ projects }: { projects: Project[] }) =
                 <h3 className="mb-1 text-lg font-bold text-white">{project.title}</h3>
                 <p className="mb-3 line-clamp-2 text-xs text-white/60">{project.description}</p>
 
-                <div className="mt-auto flex items-center gap-1">
-                  {project.techStack.slice(0, 3).map((t) => (
+                <div className="mt-auto flex flex-wrap items-center gap-1">
+                  {project.techStack.map((t) => (
                     <TechBadge key={t} name={t} small className="px-2 text-[10px]" />
                   ))}
                 </div>

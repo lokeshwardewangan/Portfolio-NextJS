@@ -77,12 +77,9 @@ export const ReactProjects = ({ projects }: { projects: Project[] }) => {
             </p>
 
             <div className="flex flex-wrap gap-2">
-              {project.techStack.slice(0, 3).map((tech) => (
+              {project.techStack.map((tech) => (
                 <TechBadge key={tech} name={tech} small />
               ))}
-              {project.techStack.length > 3 && (
-                <span className="text-xs text-white/40">+{project.techStack.length - 3}</span>
-              )}
             </div>
           </div>
         </motion.div>

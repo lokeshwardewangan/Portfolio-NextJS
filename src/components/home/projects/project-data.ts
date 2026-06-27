@@ -149,14 +149,23 @@ export const FullStackProjectsArray: Project[] = [
   },
   {
     id: "fs-8",
-    title: "College Canteen Project",
+    title: "Smart Canteen",
     description:
-      "Scalable digital ordering system with Razorpay integration. Engineered to process high transaction volumes reliably during peak hours.",
+      "Award-winning campus canteen system — preorder, online pay, QR-pickup, live order tracking. Avishkar Chairman's Trophy 2024 winner.",
     image: "/projects/smart-canteen.png",
     category: "fullstack",
-    techStack: ["React", "ExpressJS", "Firebase", "Razorpay", "Bootstrap"],
-    liveLink: "https://canteen-webapp.netlify.app/",
-    repoLink: "https://github.com/lokeshwardewangan/Attendance-Management-WebApp",
+    techStack: [
+      "React",
+      "React Router",
+      "Context API",
+      "Auth0",
+      "Razorpay",
+      "Bootstrap",
+      "Axios",
+      "QR Code",
+    ],
+    liveLink: "https://smartcanteens.vercel.app/",
+    repoLink: "https://github.com/lokeshwardewangan/smart-canteen",
   },
   {
     id: "fs-9",
