@@ -121,7 +121,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="text-muted-foreground/40 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center text-xs sm:flex-row sm:text-left">
+        <div className="text-muted-foreground/60 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center text-xs sm:flex-row sm:text-left">
           <p>© {new Date().getFullYear()} Lokeshwar Prasad Dewangan. All rights reserved.</p>
           <div className="flex items-center gap-1">
             <span>Made with curiosity & chai</span>

@@ -9,7 +9,7 @@ import Script from "next/script";
 import Backgrounds from "@/components/layouts/Backgrounds";
 import { TopNavbar } from "@/components/layouts/TopNavbar";
 // import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { BugButton } from "@/components/ui/bug-button";
+// import { BugButton } from "@/components/ui/bug-button";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import FloatingAssistantWrapper from "@/components/assistant/FloatingAssistantWrapper";
 
@@ -49,7 +49,7 @@ export default function RootLayout({
               <Toaster />
               <Backgrounds />
               {/* <ScrollToTop /> */}
-              <BugButton />
+              {/* <BugButton /> */}
               <FloatingAssistantWrapper />
               {children}
             </TooltipProvider>
