@@ -4,90 +4,62 @@ import { Marquee } from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
+type TechItem = {
+  name: string;
+  slug?: string;
+  localIcon?: string;
+};
 
-const technologies = [
-  {
-    name: "HTML",
-    slug: "html",
-  },
-  {
-    name: "CSS",
-    slug: "css",
-  },
-  {
-    name: "JavaScript",
-    slug: "js",
-  },
-  {
-    name: "React",
-    slug: "react",
-  },
-  {
-    name: "Vite",
-    slug: "vite",
-  },
-  {
-    name: "Vitest",
-    slug: "vitest",
-  },
-  {
-    name: "Next.js",
-    slug: "nextjs",
-  },
-  {
-    name: "Docker",
-    slug: "docker",
-  },
-  {
-    name: "Prisma",
-    slug: "prisma",
-  },
-  {
-    name: "Express",
-    slug: "express",
-  },
-  {
-    name: "Node.js",
-    slug: "nodejs",
-  },
-  {
-    name: "Git",
-    slug: "git",
-  },
-  {
-    name: "GitHub",
-    slug: "github",
-  },
-  {
-    name: "Postman",
-    slug: "postman",
-  },
-  {
-    name: "Postgres",
-    slug: "postgres",
-  },
-  {
-    name: "MongoDB",
-    slug: "mongodb",
-  },
-  {
-    name: "Redis",
-    slug: "redis",
-  },
-  {
-    name: "AWS",
-    slug: "aws",
-  },
-  {
-    name: "CI/CD",
-    slug: "github",
-  },
+const technologies: TechItem[] = [
+  // Web Core
+  { name: "HTML", slug: "html" },
+  { name: "CSS", slug: "css" },
+  { name: "JavaScript", slug: "js" },
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextjs" },
+
+  // AI & Workflow Automation
+  { name: "OpenAI", localIcon: "/icons/openai.svg" },
+  { name: "Gemini", localIcon: "/icons/gemini.svg" },
+  { name: "LangChain", localIcon: "/icons/langchain.svg" },
+  { name: "LangGraph", localIcon: "/icons/langgraph.svg" },
+  { name: "RAG", localIcon: "/icons/rag.svg" },
+  { name: "AI Agent", localIcon: "/icons/ai-agent.svg" },
+  { name: "n8n", localIcon: "/icons/n8n.svg" },
+  { name: "ChromaDB", localIcon: "/icons/chromadb.svg" },
+  { name: "Vector Database", localIcon: "/icons/vector-database.svg" },
+
+  // Backend & Cloud
+  { name: "Supabase", localIcon: "/icons/supabase.svg" },
+  { name: "Node.js", slug: "nodejs" },
+  { name: "Express", slug: "express" },
+  { name: "Prisma", slug: "prisma" },
+  { name: "Postgres", slug: "postgres" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Redis", slug: "redis" },
+  { name: "Docker", slug: "docker" },
+  { name: "AWS", slug: "aws" },
+
+  // Tools & Testing
+  { name: "Git", slug: "git" },
+  { name: "GitHub", slug: "github" },
+  { name: "Postman", slug: "postman" },
+  { name: "Vitest", slug: "vitest" },
+  { name: "CI/CD", slug: "github" },
 ];
 
 const firstRow = technologies.slice(0, Math.ceil(technologies.length / 2));
 const secondRow = technologies.slice(Math.ceil(technologies.length / 2));
 
-const TechCard = ({ name, slug }: { name: string; slug: string }) => {
+const TechCard = ({
+  name,
+  slug,
+  localIcon,
+}: {
+  name: string;
+  slug?: string;
+  localIcon?: string;
+}) => {
   return (
     <div
       className={cn(
@@ -101,7 +73,7 @@ const TechCard = ({ name, slug }: { name: string; slug: string }) => {
       <Image
         className="h-5 w-5 sm:h-6 sm:w-6 2xl:h-8 2xl:w-8"
         alt={name}
-        src={`https://skillicons.dev/icons?i=${slug}`}
+        src={localIcon || `https://skillicons.dev/icons?i=${slug}`}
         width={32}
         height={32}
       />
@@ -141,12 +113,12 @@ export function SkillsSection() {
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
           <Marquee pauseOnHover className="[--duration:30s]">
             {firstRow.map((tech) => (
-              <TechCard key={tech.slug} {...tech} />
+              <TechCard key={tech.name} {...tech} />
             ))}
           </Marquee>
           <Marquee reverse pauseOnHover className="mt-4 [--duration:30s]">
             {secondRow.map((tech) => (
-              <TechCard key={tech.slug} {...tech} />
+              <TechCard key={tech.name} {...tech} />
             ))}
           </Marquee>
           <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>

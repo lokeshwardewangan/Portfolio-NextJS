@@ -7,6 +7,7 @@ type TypedWord = { text: string; gradient: string };
 
 const TYPED_WORDS: TypedWord[] = [
   { text: "Scalable Systems", gradient: "from-pink-500 to-orange-400" },
+  { text: "AI-Powered Products", gradient: "from-yellow-400 to-amber-500" },
   { text: "Web Apps", gradient: "from-violet-500 to-pink-500" },
   { text: "Modern Interfaces", gradient: "from-cyan-400 to-blue-500" },
 ];

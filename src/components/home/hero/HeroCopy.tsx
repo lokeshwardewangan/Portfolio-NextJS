@@ -22,8 +22,10 @@ export const HeroCopy = () => (
       className="text-muted-foreground max-w-xl text-base leading-relaxed sm:text-[1.05rem]"
     >
       I&rsquo;m Lokeshwar Prasad Dewangan, Full-stack engineer building{" "}
-      <span className="text-foreground font-semibold">production-grade web systems</span> &mdash;
-      end-to-end, with a sharp focus on{" "}
+      <span className="text-foreground font-semibold">
+        production-grade web application, AI Powered products, and intelligent workflows.
+      </span>{" "}
+      &mdash; end-to-end, with a sharp focus on{" "}
       <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text font-semibold text-transparent">
         performance, scalability &amp; clean architecture.
       </span>

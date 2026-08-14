@@ -18,6 +18,7 @@ const TECH_STACK: TechPill[] = [
   { label: "PostgreSQL", border: "border-indigo-500/20", text: "text-indigo-400/80" },
   { label: "Docker", border: "border-sky-500/20", text: "text-sky-400/80" },
   { label: "AWS", border: "border-orange-500/20", text: "text-orange-400/80" },
+  { label: "AI Agent", border: "border-green-500/20", text: "text-green-400/80" },
 ];
 
 export const TechStackPills = () => {
