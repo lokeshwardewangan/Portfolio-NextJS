@@ -61,7 +61,6 @@ export const HeroStackedImages = ({ smoothX }: Props) => {
             fill
             sizes="(max-width: 1280px) 220px, 160px"
             placeholder="blur"
-            loading="lazy"
             className={img.imageClass}
           />
           <div className={`absolute inset-0 ${img.overlayClass}`} />

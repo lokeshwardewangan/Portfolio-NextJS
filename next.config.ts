@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     ],
   },
   compress: true,
-  productionBrowserSourceMaps: true,
+  productionBrowserSourceMaps: false,
   async headers() {
     return [
       {

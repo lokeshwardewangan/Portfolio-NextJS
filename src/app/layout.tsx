@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import QueryProvider from "@/providers/query-provider";
 import { Toaster } from "@/components/ui/sonner";
-import Script from "next/script";
 
 import Backgrounds from "@/components/layouts/Backgrounds";
 import { TopNavbar } from "@/components/layouts/TopNavbar";
@@ -12,6 +11,7 @@ import { TopNavbar } from "@/components/layouts/TopNavbar";
 // import { BugButton } from "@/components/ui/bug-button";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import FloatingAssistantWrapper from "@/components/assistant/FloatingAssistantWrapper";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const overpass = Overpass({
   variable: "--font-overpass",
@@ -29,8 +29,6 @@ export const metadata: Metadata = {
   description: "Full-stack developer portfolio",
 };
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,6 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.github.com" crossOrigin="anonymous" />
+      </head>
       <body
         suppressHydrationWarning
         className={`${overpass.variable} ${breeSerif.variable} font-overpass dark antialiased`}
@@ -55,22 +57,7 @@ export default function RootLayout({
             </TooltipProvider>
           </QueryProvider>
         </ThemeProvider>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="ga-init" strategy="lazyOnload">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}');
-              `}
-            </Script>
-          </>
-        )}
+        <GoogleAnalytics />
       </body>
     </html>
   );
