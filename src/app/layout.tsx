@@ -27,6 +27,32 @@ const breeSerif = Bree_Serif({
 export const metadata: Metadata = {
   title: "Lokeshwar Prasad Dewangan",
   description: "Full-stack developer portfolio",
+  metadataBase: new URL("https://lokeshwardewangan.in"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Lokeshwar Prasad Dewangan",
+    description: "Full-stack developer portfolio",
+    url: "https://lokeshwardewangan.in",
+    siteName: "Lokeshwar Prasad Dewangan",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lokeshwar Prasad Dewangan Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lokeshwar Prasad Dewangan",
+    description: "Full-stack developer portfolio",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

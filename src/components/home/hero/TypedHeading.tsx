@@ -50,7 +50,9 @@ export const TypedHeading = () => {
         <span
           ref={typedEl}
           className={`bg-linear-to-r bg-clip-text text-transparent ${gradientClass}`}
-        />
+        >
+          Scalable Systems
+        </span>
       </h1>
     </div>
   );

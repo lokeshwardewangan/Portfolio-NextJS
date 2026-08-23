@@ -12,8 +12,49 @@ import { ExperienceSection } from "@/components/home/experience/ExperienceSectio
 import { AchievementsSection } from "@/components/home/achievements/AchievementsSection";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://lokeshwardewangan.in/#person",
+        name: "Lokeshwar Prasad Dewangan",
+        url: "https://lokeshwardewangan.in",
+        description:
+          "Full-Stack Engineer specializing in scalable web systems and AI agent integrations.",
+        jobTitle: "Full-Stack Engineer",
+        sameAs: [
+          "https://github.com/lokeshwardewangan",
+          "https://www.linkedin.com/in/lokeshwardewangan",
+        ],
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://lokeshwardewangan.in/#organization",
+        name: "Lokeshwar Prasad Dewangan Portfolio",
+        url: "https://lokeshwardewangan.in",
+        logo: "https://lokeshwardewangan.in/og-image.png",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "contact@lokeshwardewangan.in",
+          contactType: "technical support",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bilaspur",
+          addressRegion: "Chhattisgarh",
+          addressCountry: "IN",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
         <main className="relative z-10 w-full flex-1">
           <HeroSection />
