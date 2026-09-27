@@ -45,7 +45,7 @@ export const TypedHeading = () => {
       <p className="text-muted-foreground text-sm font-semibold tracking-[0.12em]">
         Full Stack Engineer
       </p>
-      <h1 className="min-h-[1.25em] text-[1.7rem] leading-tight font-bold lg:text-[3rem]">
+      <h1 className="min-h-[1.25em] text-[1.7rem] leading-tight font-bold lg:text-[2.7rem] 2xl:text-[3rem]">
         <span className="text-foreground/70">I build </span>
         <span
           ref={typedEl}

@@ -46,9 +46,9 @@ export const StatsSticker = () => {
                 <Code2 className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-foreground text-2xl font-bold">4+</p>
+                <p className="text-foreground text-2xl font-bold">2+</p>
                 <p className="text-muted-foreground text-sm font-medium tracking-wider uppercase">
-                  Years Coding
+                  Years Professional Experience
                 </p>
               </div>
             </div>

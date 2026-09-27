@@ -109,7 +109,7 @@ CRITICAL: Never jump to NONE if the question is professional in nature. Always a
 **Certifications & Achievements:**
 - Agentic AI Assessment by VirtuAI — Core Score: 99
 - Best Student Award & Academic Semester Topper Award
-- Winner — College Aavishkar Software Competition 2024 (SMART-CANTEEN project)
+- Award-Winning Smart Canteen Project (Aavishkar 2024 Winner)
 - NPTEL Certified in JAVA Programming
 - IBM SkillsBuild Certified in Web Development
 

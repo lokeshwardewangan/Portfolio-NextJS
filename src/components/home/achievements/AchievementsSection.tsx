@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 const achievements = [
   {
     id: 1,
-    title: "Winner - College Aavishkar Software Program 2024",
+    title: "Award-Winning Smart Canteen Project — Aavishkar 2024",
     description:
-      "Won first place for developing SMART-CANTEEN, an innovation competition challenging participants to solve real-world problems through practical, impactful, and scalable technology solutions.",
+      "Won 1st place in the Aavishkar 2024 innovation program for developing SMART-CANTEEN — a scalable campus food ordering and digital payment platform solving real-world canteen congestion.",
     link: "https://www.linkedin.com/posts/lokeshwar-dewangan-7b2163211_avishkar-softwareinnovation-techleadership-activity-7167142733273407488-dDt-",
     icon: Trophy,
     gradient: "from-yellow-400 to-orange-500",

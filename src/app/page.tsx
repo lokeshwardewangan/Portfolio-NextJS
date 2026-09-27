@@ -4,7 +4,6 @@ import { FunStatsSection } from "@/components/home/stats/FunStatsSection";
 import { ProofSection } from "@/components/home/proof/ProofSection";
 import { WorkSection } from "@/components/home/work/WorkSection";
 import { OneLastThing } from "@/components/home/footer/OneLastThing";
-import { Footer } from "@/components/layouts/Footer";
 import ClickSpark from "@/components/ClickSpark";
 import { SkillsSection } from "@/components/home/skills/SkillsSection";
 import { ProjectsSection } from "@/components/home/projects/ProjectsSection";
@@ -68,7 +67,6 @@ export default function Home() {
           <WorkSection />
           {/* <RealityCheckSection /> */}
           <OneLastThing />
-          <Footer />
         </main>
       </ClickSpark>
     </div>

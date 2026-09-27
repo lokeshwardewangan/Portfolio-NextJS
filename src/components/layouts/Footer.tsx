@@ -89,14 +89,20 @@ export const Footer = () => {
             <div className="flex flex-col gap-4">
               <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Pages</h3>
               <div className="flex flex-col gap-2">
-                {["Home", "Projects", "About", "Contact"].map((item) => (
+                {[
+                  { name: "Home", href: "/" },
+                  { name: "Skills", href: "/skills" },
+                  { name: "Projects", href: "/projects" },
+                  { name: "About", href: "/about" },
+                  { name: "Contact", href: "/contact" },
+                ].map((item) => (
                   <Link
-                    key={item}
-                    href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
-                    aria-label={`Navigate to ${item} page`}
+                    key={item.name}
+                    href={item.href}
+                    aria-label={`Navigate to ${item.name} page`}
                     className="text-muted-foreground/80 w-fit text-xs transition-colors hover:text-white 2xl:text-sm"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 ))}
               </div>
@@ -107,13 +113,36 @@ export const Footer = () => {
                 Resources
               </h3>
               <div className="flex flex-col gap-2">
-                {["Resume", "Uses", "Guestbook", "Source"].map((item) => (
+                {[
+                  {
+                    name: "Resume",
+                    href: "https://www.linkedin.com/in/lokeshwar-dewangan-7b2163211/",
+                    external: true,
+                  },
+                  {
+                    name: "Source Code",
+                    href: "https://github.com/lokeshwardewangan",
+                    external: true,
+                  },
+                  {
+                    name: "AI Context (llms.txt)",
+                    href: "/llms.txt",
+                    external: true,
+                  },
+                  {
+                    name: "Privacy Policy",
+                    href: "/privacy",
+                    external: false,
+                  },
+                ].map((item) => (
                   <Link
-                    key={item}
-                    href="#"
+                    key={item.name}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                     className="text-muted-foreground/80 w-fit text-xs transition-colors hover:text-white 2xl:text-sm"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 ))}
               </div>

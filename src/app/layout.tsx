@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import Backgrounds from "@/components/layouts/Backgrounds";
 import { TopNavbar } from "@/components/layouts/TopNavbar";
+import { Footer } from "@/components/layouts/Footer";
 // import { ScrollToTop } from "@/components/ui/scroll-to-top";
 // import { BugButton } from "@/components/ui/bug-button";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -80,6 +81,7 @@ export default function RootLayout({
               {/* <BugButton /> */}
               <FloatingAssistantWrapper />
               {children}
+              <Footer />
             </TooltipProvider>
           </QueryProvider>
         </ThemeProvider>
