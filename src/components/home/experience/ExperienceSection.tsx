@@ -22,8 +22,8 @@ const experiences = [
         >
           PowerBrowser
         </a>
-        , a Chromium-based browser — owned the UI implementation for adblocker, system sync,
-        extensions management, and{" "}
+        , a Chromium-based browser — worked extensively on UI development for adblocker, system
+        sync, PowerPilot, extensions management, and{" "}
         <a
           href="https://powerbrowser.app/powerpoints/"
           target="_blank"
@@ -32,7 +32,7 @@ const experiences = [
         >
           PowerPoints
         </a>{" "}
-        features across multiple releases. Separately delivered frontend for{" "}
+        features across multiple releases. Also worked extensively on UI development for{" "}
         <a
           href="https://adsgpt.io/"
           target="_blank"
@@ -41,7 +41,7 @@ const experiences = [
         >
           AdsGPT
         </a>{" "}
-        (a generative AI platform for creating ads) and{" "}
+        (a generative AI platform for creating ads) and contributed to{" "}
         <a
           href="https://news.powerbrowser.app/"
           target="_blank"
@@ -50,11 +50,10 @@ const experiences = [
         >
           PowerNews
         </a>{" "}
-        (a news platform with local and category-based feeds) — both live products serving real
+        (a news platform with local and category-based feeds) — all live products serving real
         users.
       </>
     ),
-    link: "https://globussoft.com/employee-testimonials/",
     icon: Code2,
     gradient: "from-blue-500 to-cyan-500",
   },
@@ -85,12 +84,12 @@ const experiences = [
   {
     id: 3,
     title: "B.Tech in Computer Science & Engineering",
-    company: "CSVTU",
+    company: "Rungta College of Engineering and Technology, Bhilai",
     date: "2021 - 2025",
     description: (
       <>
         Graduated with 8.5 CGPA. Specialized in Software Engineering and Data Structures &
-        Algorithms. Built multiple academic projects including an Award-winning Smart Canteen
+        Algorithms. Built multiple academic projects, including the award-winning Smart Canteen
         system.
       </>
     ),

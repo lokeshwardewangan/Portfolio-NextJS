@@ -16,10 +16,10 @@ const achievements = [
   },
   {
     id: 2,
-    title: "Globussoft Employee Recognition",
+    title: "Best Student & Academic Semester Topper Award",
     description:
-      "Officially recognized by the organization through an employee testimonial for outstanding contributions to projects like PowerBrowser, PowerNews, and AdsGPT.",
-    link: "https://globussoft.com/employee-testimonials/",
+      "Honored to receive the Best Student Award 🏆 and Academic Semester Topper Award 📚 in recognition of consistent academic excellence, dedication, and continuous learning.",
+    link: "https://www.linkedin.com/posts/lokeshwar-dewangan-7b2163211_academicexcellence-grateful-achievement-activity-7289244658864459776-Bmbt",
     icon: Award,
     gradient: "from-blue-400 to-indigo-500",
   },

@@ -42,7 +42,7 @@ export const Footer = () => {
         <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-12 2xl:mb-20">
           <div className="flex flex-col gap-4 md:col-span-5">
             <h2 className="text-base font-bold tracking-tight text-white sm:text-lg 2xl:text-xl">
-              Lokeshwar Prasad.
+              Lokeshwar Dewangan.
             </h2>
             <p className="text-muted-foreground/80 max-w-xs text-xs leading-relaxed sm:text-xs 2xl:text-base">
               Full-Stack Developer who cares about details, performance, and user experience.

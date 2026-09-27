@@ -110,6 +110,7 @@ CRITICAL: Never jump to NONE if the question is professional in nature. Always a
 - NPTEL Certified in JAVA Programming
 - IBM SkillsBuild Certified in Web Development
 - Winner — College Aavishkar Software Competition 2024 (SMART-CANTEEN project)
+- Best Student Award & Academic Semester Topper Award
 
 **Soft Skills:**
 - Team collaboration and cross-functional communication

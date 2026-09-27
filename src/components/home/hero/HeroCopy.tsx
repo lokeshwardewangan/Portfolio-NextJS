@@ -21,7 +21,7 @@ export const HeroCopy = () => (
       transition={{ duration: 0.6, delay: 0.1 }}
       className="text-muted-foreground max-w-xl text-base leading-relaxed sm:text-[1.05rem]"
     >
-      I&rsquo;m Lokeshwar Prasad Dewangan, Full-stack engineer building{" "}
+      I&rsquo;m Lokeshwar Dewangan, Full-stack engineer building{" "}
       <span className="text-foreground font-semibold">
         production-grade web application, AI Powered products, and intelligent workflows.
       </span>{" "}
