@@ -15,7 +15,7 @@ export function getResend(): Resend {
 }
 
 export const EMAIL_FROM = "Lokeshwar Dewangan <contact@lokeshwardewangan.in>";
-export const EMAIL_ADMIN = "lokeshwar.prasad.cse@gmail.com";
+export const EMAIL_ADMIN = "lokeshwardewangan.dev@gmail.com";
 
 export const SITE_URL = "https://lokeshwardewangan.in";
 

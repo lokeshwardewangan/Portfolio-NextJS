@@ -13,7 +13,7 @@ const experiences = [
     date: "July 2024 - Present",
     description: (
       <>
-        Developed and shipped production-ready WebUI for{" "}
+        Built and maintained production WebUI features using React and TypeScript for{" "}
         <a
           href="https://powerbrowser.app/"
           target="_blank"
@@ -22,8 +22,8 @@ const experiences = [
         >
           PowerBrowser
         </a>
-        , a Chromium-based browser — worked extensively on UI development for adblocker, system
-        sync, PowerPilot, extensions management, and{" "}
+        , a Chromium-based browser — focusing on Adblocker UI, System Sync, PowerPilot, Extensions
+        Management, and{" "}
         <a
           href="https://powerbrowser.app/powerpoints/"
           target="_blank"
@@ -31,8 +31,8 @@ const experiences = [
           className="text-blue-400 hover:underline"
         >
           PowerPoints
-        </a>{" "}
-        features across multiple releases. Also worked extensively on UI development for{" "}
+        </a>
+        . Developed reusable UI components and API integrations for{" "}
         <a
           href="https://adsgpt.io/"
           target="_blank"
@@ -41,7 +41,7 @@ const experiences = [
         >
           AdsGPT
         </a>{" "}
-        (a generative AI platform for creating ads) and contributed to{" "}
+        (AI ad generation platform) and contributed to{" "}
         <a
           href="https://news.powerbrowser.app/"
           target="_blank"
@@ -49,9 +49,8 @@ const experiences = [
           className="text-blue-400 hover:underline"
         >
           PowerNews
-        </a>{" "}
-        (a news platform with local and category-based feeds) — all live products serving real
-        users.
+        </a>
+        , handling production releases, debugging, and UI responsiveness.
       </>
     ),
     icon: Code2,
@@ -84,13 +83,13 @@ const experiences = [
   {
     id: 3,
     title: "B.Tech in Computer Science & Engineering",
-    company: "Rungta College of Engineering and Technology, Bhilai",
+    company: "Rungta College of Engineering & Technology, Bhilai",
     date: "2021 - 2025",
     description: (
       <>
-        Graduated with 8.5 CGPA. Specialized in Software Engineering and Data Structures &
-        Algorithms. Built multiple academic projects, including the award-winning Smart Canteen
-        system.
+        Affiliated to CSVTU &bull; Graduated with 8.5 CGPA. Specialized in Software Engineering and
+        Data Structures &amp; Algorithms. Developed academic projects including the award-winning
+        Smart Canteen system.
       </>
     ),
     icon: GraduationCap,

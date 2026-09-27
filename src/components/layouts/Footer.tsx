@@ -62,7 +62,7 @@ export const Footer = () => {
                     label: "Instagram",
                   },
                   { icon: Twitter, href: "https://x.com/lokeshwar_dev", label: "Twitter" },
-                  { icon: Mail, href: "mailto:lokeshwar.prasad.cse@gmail.com", label: "Email" },
+                  { icon: Mail, href: "mailto:lokeshwardewangan.dev@gmail.com", label: "Email" },
                 ].map((social, idx) => (
                   <Tooltip key={idx}>
                     <TooltipTrigger asChild>

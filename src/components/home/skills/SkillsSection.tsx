@@ -11,41 +11,40 @@ type TechItem = {
 };
 
 const technologies: TechItem[] = [
-  // Web Core
-  { name: "HTML", slug: "html" },
-  { name: "CSS", slug: "css" },
-  { name: "JavaScript", slug: "js" },
+  // Frontend & Core
   { name: "React", slug: "react" },
   { name: "Next.js", slug: "nextjs" },
+  { name: "TypeScript", slug: "ts" },
+  { name: "JavaScript", slug: "js" },
+  { name: "Tailwind CSS", slug: "tailwind" },
+  { name: "Redux", slug: "redux" },
+  { name: "HTML5", slug: "html" },
+  { name: "CSS3", slug: "css" },
+
+  // Backend & Databases
+  { name: "Node.js", slug: "nodejs" },
+  { name: "Express.js", slug: "express" },
+  { name: "PostgreSQL", slug: "postgres" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Prisma", slug: "prisma" },
+  { name: "Redis", slug: "redis" },
+  { name: "Supabase", localIcon: "/icons/supabase.svg" },
+
+  // Cloud & DevOps
+  { name: "Docker", slug: "docker" },
+  { name: "AWS", slug: "aws" },
+  { name: "Git", slug: "git" },
+  { name: "GitHub", slug: "github" },
+  { name: "Postman", slug: "postman" },
+  { name: "Vitest", slug: "vitest" },
 
   // AI & Workflow Automation
   { name: "OpenAI", localIcon: "/icons/openai.svg" },
   { name: "Gemini", localIcon: "/icons/gemini.svg" },
   { name: "LangChain", localIcon: "/icons/langchain.svg" },
-  { name: "LangGraph", localIcon: "/icons/langgraph.svg" },
   { name: "RAG", localIcon: "/icons/rag.svg" },
-  { name: "AI Agent", localIcon: "/icons/ai-agent.svg" },
   { name: "n8n", localIcon: "/icons/n8n.svg" },
   { name: "ChromaDB", localIcon: "/icons/chromadb.svg" },
-  { name: "Vector Database", localIcon: "/icons/vector-database.svg" },
-
-  // Backend & Cloud
-  { name: "Supabase", localIcon: "/icons/supabase.svg" },
-  { name: "Node.js", slug: "nodejs" },
-  { name: "Express", slug: "express" },
-  { name: "Prisma", slug: "prisma" },
-  { name: "Postgres", slug: "postgres" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Redis", slug: "redis" },
-  { name: "Docker", slug: "docker" },
-  { name: "AWS", slug: "aws" },
-
-  // Tools & Testing
-  { name: "Git", slug: "git" },
-  { name: "GitHub", slug: "github" },
-  { name: "Postman", slug: "postman" },
-  { name: "Vitest", slug: "vitest" },
-  { name: "CI/CD", slug: "github" },
 ];
 
 const firstRow = technologies.slice(0, Math.ceil(technologies.length / 2));

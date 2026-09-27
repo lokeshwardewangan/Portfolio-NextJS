@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Gauge, Smartphone, Zap, LayoutTemplate } from "lucide-react";
+import { Gauge, Zap, LayoutTemplate, Bot } from "lucide-react";
 import { MetricCard } from "./MetricCard";
 
 export const ProofSection = () => {
@@ -23,15 +23,12 @@ export const ProofSection = () => {
             <h2 className="mb-4 text-2xl font-bold tracking-wide sm:text-3xl 2xl:text-4xl">
               <span className="bg-linear-to-r from-emerald-400 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
                 Proof of Skill
-              </span>{" "}
-              {/* <span className="text-muted-foreground/50 mt-2 block text-2xl font-light italic sm:mt-0 sm:inline md:text-3xl">
-                (Not Just Claims)
-              </span> */}
+              </span>
             </h2>
             <p className="text-muted-foreground/80 max-w-xl text-xs sm:text-xs 2xl:text-base">
-              Anyone can say "I care about performance." This page proves it.
+              Verified performance metrics and technical evaluation benchmarks.
               <br className="hidden sm:block" />
-              Here are the real metrics of the site you're using right now.
+              Real measurements backing full-stack and modern web engineering capabilities.
             </p>
           </motion.div>
         </div>
@@ -69,11 +66,11 @@ export const ProofSection = () => {
           />
 
           <MetricCard
-            label="Responsive Coverage"
-            value="100%"
+            label="Agentic AI Assessment"
+            value="100"
             score={100}
-            icon={Smartphone}
-            subtext="Mobile, Tablet, Desktop, & 4K"
+            icon={Bot}
+            subtext="Core Score • VirtuAI Assessment"
             delay={0.4}
             gradient="from-purple-500/20 to-pink-500/20"
           />

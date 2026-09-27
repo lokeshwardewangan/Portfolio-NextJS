@@ -83,7 +83,7 @@ export function TopNavbar() {
           <div className="flex w-full flex-col gap-4">
             <NavbarButton
               onClick={() => {
-                window.location.href = "mailto:lokeshwar.prasad.cse@gmail.com";
+                window.location.href = "mailto:lokeshwardewangan.dev@gmail.com";
                 setIsMobileMenuOpen(false);
               }}
               variant="primary"
