@@ -218,4 +218,18 @@
   .scale_layout {
     @apply scale-100 lg:scale-75 2xl:scale-100;
   }
+
+  .typed-cursor {
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+    display: inline-block;
+    contain: layout style;
+  }
+
+  @keyframes typedjsBlink {
+    50% {
+      opacity: 0;
+    }
+  }
 }

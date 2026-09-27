@@ -26,7 +26,7 @@ export const TypedHeading = () => {
       loop: true,
       showCursor: true,
       cursorChar: "|",
-      autoInsertCss: true,
+      autoInsertCss: false,
       preStringTyped: (arrayPos: number) => {
         setGradientClass(TYPED_WORDS[arrayPos]?.gradient ?? TYPED_WORDS[0].gradient);
       },
@@ -45,11 +45,11 @@ export const TypedHeading = () => {
       <p className="text-muted-foreground text-sm font-semibold tracking-[0.12em]">
         Full Stack Engineer
       </p>
-      <h1 className="min-h-[1.25em] text-[1.7rem] leading-tight font-bold lg:text-[2.7rem] 2xl:text-[3rem]">
+      <h1 className="min-h-[4.5rem] text-[1.7rem] leading-tight font-bold sm:min-h-[4.25rem] lg:min-h-[3.6rem] lg:text-[2.7rem] 2xl:min-h-[4.2rem] 2xl:text-[3rem]">
         <span className="text-foreground/70">I build </span>
         <span
           ref={typedEl}
-          className={`bg-linear-to-r bg-clip-text text-transparent ${gradientClass}`}
+          className={`inline-block bg-linear-to-r bg-clip-text text-transparent [contain:layout] ${gradientClass}`}
         >
           Scalable Systems
         </span>

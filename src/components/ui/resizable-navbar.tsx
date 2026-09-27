@@ -209,10 +209,11 @@ export const NavbarLogo = ({ url }: Props) => {
         <Image
           className="rounded-full object-cover"
           src={url}
-          alt=""
-          fill
-          sizes="32px"
-          quality={75}
+          alt="Lokeshwar Dewangan"
+          width={32}
+          height={32}
+          priority
+          quality={80}
         />
       </div>
 

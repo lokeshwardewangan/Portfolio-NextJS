@@ -143,7 +143,13 @@ const LightRays: React.FC<LightRaysProps> = ({
     const initializeWebGL = async () => {
       if (!containerRef.current) return;
 
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await new Promise((resolve) => {
+        if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+          (window as any).requestIdleCallback(resolve, { timeout: 1500 });
+        } else {
+          setTimeout(resolve, 200);
+        }
+      });
 
       if (!containerRef.current) return;
 

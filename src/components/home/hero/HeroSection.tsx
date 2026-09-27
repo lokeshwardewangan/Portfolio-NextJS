@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { useMotionValue, useSpring } from "motion/react";
 import { HeroCopy } from "./HeroCopy";
 import { HeroOrbitDecorations } from "./HeroOrbitDecorations";
@@ -10,19 +9,9 @@ import { MorphingImageFrame } from "./MorphingImageFrame";
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
   const smoothX = useSpring(mouseX, { stiffness: 30, damping: 50 });
-  const centerX = useRef(0);
-
-  useEffect(() => {
-    const update = () => {
-      centerX.current = window.innerWidth / 2;
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    mouseX.set(e.clientX - centerX.current);
+    mouseX.set(e.clientX - window.innerWidth / 2);
   };
 
   return (

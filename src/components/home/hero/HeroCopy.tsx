@@ -3,13 +3,11 @@
 import { motion } from "motion/react";
 import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { TypedHeading } from "./TypedHeading";
 import { TechStackPills } from "./TechStackPills";
 import { FeaturedBadge } from "./FeaturedBadge";
 import { ToolButton } from "./ToolButton";
-
-const CometPath = dynamic(() => import("./CometPath"), { ssr: false });
+import CometPath from "./CometPath";
 
 export const HeroCopy = () => (
   <div className="relative z-10 flex w-full flex-col items-center justify-center gap-6 text-center lg:w-[55%] lg:items-start lg:pr-10 lg:text-left">
