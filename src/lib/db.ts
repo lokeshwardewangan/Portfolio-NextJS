@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 
-const MONGO_URI = process.env.MONGO_URI!;
-if (!MONGO_URI) throw new Error("Please define MONGO_URI in .env");
-
 /**
  * MongoDB Connection Helper (Next.js)
  * -----------------------------------
@@ -27,12 +24,15 @@ const cached = global._mongooseCache ?? { conn: null, promise: null };
 global._mongooseCache = cached;
 
 export async function connectDB(): Promise<typeof mongoose> {
+  const mongoUri = process.env.MONGO_URI;
+  if (!mongoUri) throw new Error("Please define MONGO_URI in .env");
+
   if (cached.conn) {
     return cached.conn;
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI).then((mongoose) => mongoose);
+    cached.promise = mongoose.connect(mongoUri).then((mongoose) => mongoose);
   }
 
   cached.conn = await cached.promise;

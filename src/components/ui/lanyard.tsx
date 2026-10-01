@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
@@ -11,6 +10,7 @@ import {
   useRopeJoint,
   useSphericalJoint,
   RigidBodyProps,
+  RapierRigidBody,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import * as THREE from "three";
@@ -99,14 +99,13 @@ interface BandProps {
 }
 
 function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
-  // Using "any" for refs since the exact types depend on Rapier's internals
-  const band = useRef<any>(null);
-  const fixed = useRef<any>(null);
-  const j0 = useRef<any>(null);
-  const j1 = useRef<any>(null);
-  const j2 = useRef<any>(null);
-  const j3 = useRef<any>(null);
-  const card = useRef<any>(null);
+  const band = useRef<THREE.Mesh<MeshLineGeometry, MeshLineMaterial>>(null!);
+  const fixed = useRef<RapierRigidBody>(null!);
+  const j0 = useRef<RapierRigidBody & { lerped: THREE.Vector3 }>(null!);
+  const j1 = useRef<RapierRigidBody & { lerped: THREE.Vector3 }>(null!);
+  const j2 = useRef<RapierRigidBody & { lerped: THREE.Vector3 }>(null!);
+  const j3 = useRef<RapierRigidBody>(null!);
+  const card = useRef<RapierRigidBody>(null!);
   const { width, height } = useThree((state) => state.viewport);
 
   const vec = new THREE.Vector3();
@@ -114,7 +113,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
   const rot = new THREE.Vector3();
   const dir = new THREE.Vector3();
 
-  const segmentProps: any = {
+  const segmentProps: RigidBodyProps = {
     type: "dynamic" as RigidBodyProps["type"],
     canSleep: true,
     colliders: false,
@@ -122,17 +121,27 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
     linearDamping: 4,
   };
 
-  const { nodes, materials } = useGLTF(cardGLB) as any;
-  const texture = useTexture(lanyard);
+  const { nodes, materials } = useGLTF(cardGLB) as unknown as {
+    nodes: Record<"card" | "clip" | "clamp", THREE.Mesh>;
+    materials: { base: THREE.MeshStandardMaterial };
+  };
+  const texture = useTexture(lanyard, (loadedTexture) => {
+    loadedTexture.wrapS = loadedTexture.wrapT = THREE.RepeatWrapping;
+    loadedTexture.needsUpdate = true;
+  });
   const [curve] = useState(
     () =>
-      new THREE.CatmullRomCurve3([
-        new THREE.Vector3(),
-        new THREE.Vector3(),
-        new THREE.Vector3(),
-        new THREE.Vector3(),
-        new THREE.Vector3(),
-      ])
+      new THREE.CatmullRomCurve3(
+        [
+          new THREE.Vector3(),
+          new THREE.Vector3(),
+          new THREE.Vector3(),
+          new THREE.Vector3(),
+          new THREE.Vector3(),
+        ],
+        false,
+        "chordal"
+      )
   );
   const [dragged, drag] = useState<false | THREE.Vector3>(false);
   const [hovered, hover] = useState(false);
@@ -188,12 +197,9 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
       band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
-      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z }, true);
     }
   });
-
-  curve.curveType = "chordal";
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
   return (
     <>
@@ -247,12 +253,12 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
             position={[0, -0.64, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e: any) => {
-              e.target.releasePointerCapture(e.pointerId);
+            onPointerUp={(e) => {
+              (e.target as Element).releasePointerCapture(e.pointerId);
               drag(false);
             }}
-            onPointerDown={(e: any) => {
-              e.target.setPointerCapture(e.pointerId);
+            onPointerDown={(e) => {
+              (e.target as Element).setPointerCapture(e.pointerId);
               drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
             }}
           >
@@ -278,10 +284,11 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
+          args={[{ resolution: new THREE.Vector2(1000, isMobile ? 2000 : 1000) }]}
           color="#ededed"
           depthTest={false}
           resolution={isMobile ? [1000, 2000] : [1000, 1000]}
-          useMap
+          useMap={1}
           map={texture}
           repeat={[-4, 1]}
           lineWidth={0.5}

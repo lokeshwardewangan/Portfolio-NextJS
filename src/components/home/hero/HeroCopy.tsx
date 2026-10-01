@@ -10,7 +10,7 @@ import { ToolButton } from "./ToolButton";
 import CometPath from "./CometPath";
 
 export const HeroCopy = () => (
-  <div className="relative z-10 flex w-full flex-col items-center justify-center gap-6 text-center lg:w-[55%] lg:items-start lg:pr-10 lg:text-left">
+  <div className="relative z-10 flex w-full min-w-0 flex-col items-center justify-center gap-6 text-center lg:flex-1 lg:items-start lg:text-left">
     <CometPath />
 
     <motion.div
@@ -19,7 +19,7 @@ export const HeroCopy = () => (
       transition={{ duration: 0.5 }}
       className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm"
     >
-      <span className="relative flex h-2 w-2">
+      <span className="relative flex h-2 w-2 shrink-0">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
       </span>

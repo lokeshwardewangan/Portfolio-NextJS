@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { sendMessage } from "@/services/contact";
 import { toast } from "sonner";
+import { isAxiosError } from "axios";
 import { ContactFormData } from "@/schemas/contact";
 
 export const useSendMessage = () => {
@@ -11,10 +12,12 @@ export const useSendMessage = () => {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       console.error("Error sending message:", error);
       const errorMessage =
-        error.response?.data?.error || error.message || "Failed to send message. Please try again.";
+        (isAxiosError<{ error?: string }>(error) ? error.response?.data?.error : undefined) ||
+        error.message ||
+        "Failed to send message. Please try again.";
       toast.error("Something went wrong.", {
         description: errorMessage,
       });

@@ -34,22 +34,22 @@ export const CodeFragment = () => {
             </p>
             <p className="pl-4">
               <span className="text-blue-300">name</span>:{" "}
-              <span className="text-green-400">"Lokeshwar"</span>,
+              <span className="text-green-400">&quot;Lokeshwar&quot;</span>,
             </p>
             <p className="pl-4">
               <span className="text-blue-300">role</span>:{" "}
-              <span className="text-green-400">"Full Stack Engineer"</span>,
+              <span className="text-green-400">&quot;Full Stack Engineer&quot;</span>,
             </p>
             <p className="pl-4">
               <span className="text-blue-300">focus</span>: <span className="text-white">[</span>
             </p>
             <p className="pl-8">
-              <span className="text-orange-300">"React"</span>,{" "}
-              <span className="text-orange-300">"Next.js"</span>,
+              <span className="text-orange-300">&quot;React&quot;</span>,{" "}
+              <span className="text-orange-300">&quot;Next.js&quot;</span>,
             </p>
             <p className="pl-8">
-              <span className="text-orange-300">"Performance"</span>,{" "}
-              <span className="text-orange-300">"UX"</span>
+              <span className="text-orange-300">&quot;Performance&quot;</span>,{" "}
+              <span className="text-orange-300">&quot;UX&quot;</span>
             </p>
             <p className="pl-4">
               <span className="text-white">]</span>

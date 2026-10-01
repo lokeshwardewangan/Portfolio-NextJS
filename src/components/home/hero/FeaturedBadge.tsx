@@ -34,7 +34,7 @@ export const FeaturedBadge = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 6 }}
             transition={{ duration: 0.2, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className="absolute top-full left-0 w-[300px] origin-top-left pt-2"
+            className="absolute top-full left-1/2 w-[min(300px,calc(100vw-3rem))] origin-top -translate-x-1/2 pt-2 lg:left-0 lg:origin-top-left lg:translate-x-0"
           >
             <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/95 p-5 shadow-2xl backdrop-blur-3xl">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pink-500/5 via-purple-500/5 to-cyan-500/5" />

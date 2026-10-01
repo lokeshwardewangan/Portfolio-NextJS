@@ -102,8 +102,8 @@ export function SkillsSection() {
               </span>
             </h2>
             <p className="text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
-              I don't just know these tools; I build with them. From frontend finesse to backend
-              robustness, this is the stack that powers my work.
+              I don&apos;t just know these tools; I build with them. From frontend finesse to
+              backend robustness, this is the stack that powers my work.
             </p>
           </motion.div>
         </div>

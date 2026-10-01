@@ -48,7 +48,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-sm text-neutral-400 md:text-base">
-            Have a project in mind? Let's build something extraordinary.
+            Have a project in mind? Let&apos;s build something extraordinary.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
             <CardHeader className="px-8">
               <CardTitle className="text-xl text-white">Contact Me</CardTitle>
               <CardDescription className="text-neutral-400">
-                Fill out the form below and I'll get back to you shortly.
+                Fill out the form below and I&apos;ll get back to you shortly.
               </CardDescription>
             </CardHeader>
             <CardContent className="px-8">

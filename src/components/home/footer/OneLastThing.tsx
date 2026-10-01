@@ -22,8 +22,8 @@ export const OneLastThing = () => {
           </div>
 
           <h2 className="text-2xl leading-tight font-medium text-white/90 md:text-3xl">
-            "If you scrolled this far, <br className="hidden sm:block" />
-            we’ll probably get along."
+            &quot;If you scrolled this far, <br className="hidden sm:block" />
+            we’ll probably get along.&quot;
           </h2>
 
           <p className="text-muted-foreground/50 font-mono text-sm tracking-widest uppercase">

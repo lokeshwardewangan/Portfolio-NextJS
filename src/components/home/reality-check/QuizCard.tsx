@@ -120,7 +120,7 @@ export const QuizCard = () => {
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="text-purple-400 italic">// JavaScript Magic 🪄</p>
+            <p className="text-purple-400 italic">&#47;&#47; JavaScript Magic 🪄</p>
             <div className="text-neutral-300">console.log(</div>
             <div className="pl-4 text-neutral-300">
               <span className="text-blue-400">0.1</span> +{" "}

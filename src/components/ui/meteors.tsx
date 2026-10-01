@@ -27,8 +27,8 @@ export const Meteors = ({ number, className }: { number?: number; className?: st
             style={{
               top: "-40px", // Start above the container
               left: position + "px",
-              animationDelay: Math.random() * 5 + "s", // Random delay between 0-5s
-              animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s", // Keep some randomness in duration
+              animationDelay: ((idx * 1.618) % 5) + "s", // Random delay between 0-5s
+              animationDuration: 5 + ((idx * 7) % 5) + "s", // Keep some randomness in duration
             }}
           ></span>
         );

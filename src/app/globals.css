@@ -223,8 +223,7 @@
     opacity: 1;
     animation: typedjsBlink 0.7s infinite;
     -webkit-animation: typedjsBlink 0.7s infinite;
-    display: inline-block;
-    contain: layout style;
+    display: inline;
   }
 
   @keyframes typedjsBlink {

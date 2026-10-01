@@ -215,7 +215,7 @@ export function ChatInterface() {
                   )}
                   <div className="max-w-full">
                     {m.parts && m.parts.length > 0 ? (
-                      m.parts.map((part: any, index: number) => {
+                      m.parts.map((part, index) => {
                         if (part.type === "text") {
                           const textPart = part as { type: "text"; text: string };
                           return <div key={index}>{renderMessageContent(textPart.text)}</div>;
@@ -223,7 +223,11 @@ export function ChatInterface() {
                         return null;
                       })
                     ) : (
-                      <div>{renderMessageContent((m as any).content || "")}</div>
+                      <div>
+                        {renderMessageContent(
+                          (m as UIMessage & { content?: string }).content || ""
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>

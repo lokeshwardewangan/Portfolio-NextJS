@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { LucideIcon } from "lucide-react";
+import { ExternalLink, LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MetricCardProps {
@@ -13,6 +13,7 @@ interface MetricCardProps {
   delay?: number;
   className?: string;
   gradient?: string;
+  externalLink?: boolean;
 }
 
 export const MetricCard = ({
@@ -24,6 +25,7 @@ export const MetricCard = ({
   delay = 0,
   className,
   gradient = "from-emerald-500 to-green-500",
+  externalLink = false,
 }: MetricCardProps) => {
   // Radial Progress Calculations
   const radius = 28;
@@ -53,7 +55,16 @@ export const MetricCard = ({
         <div className="flex flex-col gap-1">
           <div className="text-muted-foreground flex items-center gap-2">
             {Icon && <Icon size={16} />}
-            <h3 className="text-sm font-medium">{label}</h3>
+            <h3 className="text-sm font-medium">
+              {label}
+              {externalLink && (
+                <ExternalLink
+                  size={14}
+                  aria-hidden="true"
+                  className="ml-1.5 inline-block align-middle text-purple-400 transition-colors group-hover:text-purple-300"
+                />
+              )}
+            </h3>
           </div>
           <div className="mt-2">
             <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl 2xl:text-4xl">

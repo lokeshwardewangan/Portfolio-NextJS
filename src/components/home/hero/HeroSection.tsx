@@ -17,12 +17,12 @@ export const HeroSection = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="scale_layout relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden px-6 pt-16 pb-20 md:pt-20 lg:px-12 lg:pt-14 lg:pb-0 xl:pt-0"
+      className="relative flex min-h-[90svh] w-full items-center justify-center overflow-hidden px-6 pt-24 pb-16 sm:px-8 lg:px-12 lg:pt-28 lg:pb-16"
     >
-      <div className="mx-auto flex h-full w-full max-w-7xl flex-col-reverse items-center justify-center lg:flex-row lg:justify-between lg:gap-12">
+      <div className="mx-auto flex w-full max-w-7xl flex-col-reverse items-center justify-center gap-10 lg:flex-row lg:justify-between lg:gap-12">
         <HeroCopy />
 
-        <div className="perspective-1000 relative flex h-[400px] w-full max-w-[300px] items-center justify-center sm:h-[550px] sm:w-[400px] sm:max-w-xl lg:left-0 lg:h-[600px] lg:w-[45%] lg:max-w-none lg:justify-center">
+        <div className="perspective-1000 relative flex h-[320px] w-full max-w-[300px] shrink-0 items-center justify-center sm:h-[420px] sm:max-w-[400px] lg:h-[520px] lg:w-[38%] lg:max-w-none">
           <div className="relative flex items-center justify-center">
             <HeroOrbitDecorations />
             <HeroStackedImages smoothX={smoothX} />

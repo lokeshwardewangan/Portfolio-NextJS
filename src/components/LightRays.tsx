@@ -145,7 +145,7 @@ const LightRays: React.FC<LightRaysProps> = ({
 
       await new Promise((resolve) => {
         if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-          (window as any).requestIdleCallback(resolve, { timeout: 1500 });
+          window.requestIdleCallback(() => resolve(undefined), { timeout: 1500 });
         } else {
           setTimeout(resolve, 200);
         }

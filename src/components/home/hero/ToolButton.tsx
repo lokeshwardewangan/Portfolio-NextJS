@@ -1,10 +1,11 @@
 import React from "react";
+import type { LucideIcon } from "lucide-react";
 
 interface ToolButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
-  icon?: any;
+  icon?: LucideIcon;
   onClick?: () => void;
 }
 

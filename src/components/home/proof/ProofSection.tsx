@@ -65,15 +65,25 @@ export const ProofSection = () => {
             gradient="from-blue-500/20 to-indigo-500/20"
           />
 
-          <MetricCard
-            label="Agentic AI Assessment"
-            value="100"
-            score={100}
-            icon={Bot}
-            subtext="Core Score • VirtuAI Assessment"
-            delay={0.4}
-            gradient="from-purple-500/20 to-pink-500/20"
-          />
+          <a
+            href="https://is-agentic.com/scan/lokeshwardewangan.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Agentic AI Assessment (opens in a new tab)"
+            className="block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-400"
+          >
+            <MetricCard
+              label="Agentic AI Assessment"
+              externalLink
+              value="100"
+              score={100}
+              icon={Bot}
+              subtext="Core Score • VirtuAI Assessment"
+              delay={0.4}
+              gradient="from-purple-500/20 to-pink-500/20"
+              className="h-full"
+            />
+          </a>
         </div>
       </div>
     </section>
