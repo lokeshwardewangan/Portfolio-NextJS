@@ -85,7 +85,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills_section"
-      className="relative w-full overflow-hidden bg-black/5 py-12 lg:py-12"
+      className="bg-card/80 relative w-full overflow-hidden py-12 lg:py-12 dark:bg-black/5"
     >
       <div className="relative z-10 container mx-auto max-w-full px-6 md:px-12">
         {/* Header */}
@@ -97,11 +97,11 @@ export function SkillsSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-2xl font-bold tracking-wide sm:text-3xl 2xl:text-4xl">
-              <span className="bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-700 via-sky-700 to-blue-700 bg-clip-text text-transparent dark:from-cyan-400 dark:via-sky-400 dark:to-blue-500">
                 My Tech Arsenal
               </span>
             </h2>
-            <p className="text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
               I don&apos;t just know these tools; I build with them. From frontend finesse to
               backend robustness, this is the stack that powers my work.
             </p>

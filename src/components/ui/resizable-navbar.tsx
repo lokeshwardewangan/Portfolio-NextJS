@@ -191,10 +191,16 @@ export const MobileNavMenu = ({ children, className, isOpen }: MobileNavMenuProp
 };
 
 export const MobileNavToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => {
-  return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
-  ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-expanded={isOpen}
+      className="text-foreground focus-visible:ring-ring inline-flex h-10 w-10 items-center justify-center rounded-full focus-visible:ring-2 focus-visible:outline-none"
+    >
+      {isOpen ? <IconX aria-hidden="true" /> : <IconMenu2 aria-hidden="true" />}
+    </button>
   );
 };
 

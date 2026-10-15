@@ -18,7 +18,7 @@ const experiences = [
           href="https://powerbrowser.app/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:underline"
+          className="text-blue-700 hover:underline dark:text-blue-400"
         >
           PowerBrowser
         </a>
@@ -28,7 +28,7 @@ const experiences = [
           href="https://powerbrowser.app/powerpoints/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:underline"
+          className="text-blue-700 hover:underline dark:text-blue-400"
         >
           PowerPoints
         </a>
@@ -37,7 +37,7 @@ const experiences = [
           href="https://adsgpt.io/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:underline"
+          className="text-blue-700 hover:underline dark:text-blue-400"
         >
           AdsGPT
         </a>{" "}
@@ -46,7 +46,7 @@ const experiences = [
           href="https://news.powerbrowser.app/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:underline"
+          className="text-blue-700 hover:underline dark:text-blue-400"
         >
           PowerNews
         </a>
@@ -54,7 +54,7 @@ const experiences = [
       </>
     ),
     icon: Code2,
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-blue-700 to-cyan-700 dark:from-blue-500 dark:to-cyan-500",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ const experiences = [
           href="https://ijsrgi.com/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:underline"
+          className="text-blue-700 hover:underline dark:text-blue-400"
         >
           journal management platform
         </a>{" "}
@@ -78,7 +78,7 @@ const experiences = [
     ),
     link: "https://ijsrgi.com/",
     icon: Briefcase,
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-purple-700 to-pink-700 dark:from-purple-500 dark:to-pink-500",
   },
   {
     id: 3,
@@ -93,7 +93,7 @@ const experiences = [
       </>
     ),
     icon: GraduationCap,
-    gradient: "from-emerald-500 to-teal-500",
+    gradient: "from-emerald-700 to-teal-700 dark:from-emerald-500 dark:to-teal-500",
   },
 ];
 
@@ -111,7 +111,7 @@ export const ExperienceSection = () => {
     <section
       id="experience"
       ref={containerRef}
-      className="relative z-10 w-full overflow-hidden bg-black/5 py-12 md:py-16 2xl:py-24"
+      className="bg-card/80 relative z-10 w-full overflow-hidden py-12 md:py-16 2xl:py-24 dark:bg-black/5"
     >
       <div className="container mx-auto max-w-4xl px-4 md:px-6 2xl:max-w-7xl">
         <div className="mb-12 text-center lg:mb-16 2xl:mb-20">
@@ -122,11 +122,11 @@ export const ExperienceSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-3xl font-bold tracking-wide sm:text-4xl 2xl:text-5xl">
-              <span className="bg-linear-to-r from-blue-400 via-indigo-500 to-violet-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-700 via-indigo-700 to-violet-700 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-500 dark:to-violet-500">
                 My Journey
               </span>
             </h2>
-            <p className="text-muted-foreground/80 text-xs tracking-wide sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 text-xs tracking-wide sm:text-xs 2xl:text-base">
               A chronological roadmap of my professional growth, educational background, and
               significant milestones.
             </p>
@@ -135,7 +135,7 @@ export const ExperienceSection = () => {
 
         <div className="relative mx-auto max-w-5xl">
           {/* Central Line for Desktop */}
-          <div className="absolute top-0 bottom-0 left-4 hidden w-[2px] bg-white/10 md:left-1/2 md:-ml-px md:block" />
+          <div className="bg-foreground/10 absolute top-0 bottom-0 left-4 hidden w-[2px] md:left-1/2 md:-ml-px md:block" />
 
           {/* Animated Glowing Line for Desktop */}
           <motion.div
@@ -144,7 +144,7 @@ export const ExperienceSection = () => {
           />
 
           {/* Static Line for Mobile */}
-          <div className="absolute top-0 bottom-0 left-4 w-[2px] bg-white/10 md:hidden" />
+          <div className="bg-foreground/10 absolute top-0 bottom-0 left-4 w-[2px] md:hidden" />
 
           {/* Animated Glowing Line for Mobile */}
           <motion.div
@@ -172,7 +172,7 @@ export const ExperienceSection = () => {
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className="flex h-6 w-6 items-center justify-center rounded-full bg-black/80 ring-2 ring-black backdrop-blur-md md:h-10 md:w-10 md:ring-4"
+                      className="bg-card/80 ring-background flex h-6 w-6 items-center justify-center rounded-full ring-2 backdrop-blur-md md:h-10 md:w-10 md:ring-4 dark:bg-black/80"
                     >
                       <div
                         className={cn(
@@ -196,7 +196,7 @@ export const ExperienceSection = () => {
                       isEven ? "text-left md:pr-12 md:text-right" : "text-left md:pl-12"
                     )}
                   >
-                    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl transition-colors hover:border-white/20 hover:bg-black/40">
+                    <div className="group border-border bg-card/80 hover:border-border hover:bg-card/80 relative overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-colors dark:bg-black/20 dark:hover:bg-black/40">
                       <div
                         className={cn(
                           "flex flex-col gap-2",
@@ -205,19 +205,19 @@ export const ExperienceSection = () => {
                       >
                         <span
                           className={cn(
-                            "inline-block w-fit rounded-full bg-white/5 py-1 text-xs font-semibold text-white/70",
+                            "bg-foreground/5 text-foreground/70 inline-block w-fit rounded-full py-1 text-xs font-semibold",
                             "px-3"
                           )}
                         >
                           {exp.date}
                         </span>
-                        <h3 className="mt-2 text-xl font-bold tracking-wide text-white 2xl:text-2xl">
+                        <h3 className="text-foreground mt-2 text-xl font-bold tracking-wide 2xl:text-2xl">
                           {exp.link ? (
                             <a
                               href={exp.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 transition-colors hover:text-blue-400"
+                              className="inline-flex items-center gap-1.5 transition-colors hover:text-blue-700 dark:hover:text-blue-400"
                             >
                               {exp.title}
                               <ExternalLink className="h-4 w-4" />

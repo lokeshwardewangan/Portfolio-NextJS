@@ -53,7 +53,7 @@ export const HeroStackedImages = ({ smoothX }: Props) => {
           animate={{ y: img.yRange, rotate: img.rotateRange }}
           transition={{ duration: img.duration, repeat: Infinity, ease: "easeInOut" }}
           style={{ x: parallax }}
-          className={`pointer-events-none absolute z-10 hidden aspect-3/4 overflow-hidden rounded-2xl border border-white/10 shadow-2xl md:block ${img.position} ${img.width}`}
+          className={`border-border pointer-events-none absolute z-10 hidden aspect-3/4 overflow-hidden rounded-2xl border shadow-2xl md:block ${img.position} ${img.width}`}
         >
           <Image
             src={img.src}

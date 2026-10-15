@@ -30,7 +30,7 @@ export const StatCard = ({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        "group relative flex flex-col gap-1 overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/10 hover:shadow-xl",
+        "group border-border bg-foreground/5 hover:border-border relative flex flex-col gap-1 overflow-hidden rounded-2xl border p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
         className
       )}
     >
@@ -45,7 +45,7 @@ export const StatCard = ({
       <div className="flex items-center justify-between">
         <h3 className="text-muted-foreground text-sm font-medium">{label}</h3>
         {Icon && (
-          <div className="text-foreground/80 rounded-full bg-white/5 p-2 transition-colors group-hover:bg-white/10 group-hover:text-white">
+          <div className="text-foreground/80 bg-foreground/5 group-hover:bg-foreground/10 group-hover:text-foreground rounded-full p-2 transition-colors">
             <Icon size={18} />
           </div>
         )}
@@ -55,7 +55,9 @@ export const StatCard = ({
         <h2 className="bg-linear-to-br from-white to-white/70 bg-clip-text text-3xl font-bold text-transparent lg:text-3xl 2xl:text-4xl">
           {value}
         </h2>
-        {subtext && <p className="text-muted-foreground/80 text-xs">{subtext}</p>}
+        {subtext && (
+          <p className="text-muted-foreground dark:text-muted-foreground/80 text-xs">{subtext}</p>
+        )}
       </div>
     </motion.div>
   );

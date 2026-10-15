@@ -22,7 +22,7 @@ export const FeaturedProject = ({ project, index }: { project: Project; index: n
       style={{
         scale: scaleProgress,
       }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all hover:border-white/20 hover:bg-white/10"
+      className="group border-border bg-foreground/5 hover:border-border hover:bg-foreground/10 relative flex h-full flex-col overflow-hidden rounded-2xl border transition-all"
     >
       {/* Image Section */}
       <div className="relative aspect-video w-full overflow-hidden">
@@ -52,15 +52,15 @@ export const FeaturedProject = ({ project, index }: { project: Project; index: n
       {/* Content Section */}
       <div className="flex flex-1 flex-col p-4 2xl:p-5">
         <div className="relative mb-0 flex items-start justify-between gap-2 2xl:mb-3 2xl:gap-4">
-          <h3 className="text-base font-bold text-white sm:text-lg 2xl:text-2xl">
+          <h3 className="text-foreground text-base font-bold sm:text-lg 2xl:text-2xl">
             {project.title}
           </h3>
-          <span className="shrink-0 text-2xl font-bold text-slate-400 sm:text-3xl 2xl:text-4xl">
+          <span className="text-muted-foreground shrink-0 text-2xl font-bold sm:text-3xl 2xl:text-4xl">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        <p className="mb-3 line-clamp-3 text-xs leading-relaxed text-white/70 2xl:mb-4 2xl:text-sm">
+        <p className="text-foreground/70 mb-3 line-clamp-3 text-xs leading-relaxed 2xl:mb-4 2xl:text-sm">
           {project.description}
         </p>
 

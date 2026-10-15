@@ -17,7 +17,7 @@ export const HeroCopy = () => (
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm"
+      className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 backdrop-blur-sm dark:text-emerald-400"
     >
       <span className="relative flex h-2 w-2 shrink-0">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
@@ -39,7 +39,7 @@ export const HeroCopy = () => (
         production-grade web application, AI Powered products, and intelligent workflows.
       </span>{" "}
       &mdash; end-to-end, with a sharp focus on{" "}
-      <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text font-semibold text-transparent">
+      <span className="bg-gradient-to-r from-violet-700 to-pink-700 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:to-pink-400">
         performance, scalability &amp; clean architecture.
       </span>
     </motion.p>
@@ -67,7 +67,7 @@ export const HeroCopy = () => (
           href="https://github.com/lokeshwardewangan"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-foreground rounded-full border border-white/10 bg-white/5 p-2.5 transition-colors hover:bg-white/10"
+          className="text-muted-foreground hover:text-foreground border-border bg-foreground/5 hover:bg-foreground/10 rounded-full border p-2.5 transition-colors"
           aria-label="GitHub Profile"
         >
           <Github className="h-4 w-4" />
@@ -76,7 +76,7 @@ export const HeroCopy = () => (
           href="https://www.linkedin.com/in/lokeshwar-dewangan-7b2163211/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground rounded-full border border-white/10 bg-white/5 p-2.5 transition-colors hover:bg-white/10 hover:text-blue-400"
+          className="text-muted-foreground border-border bg-foreground/5 hover:bg-foreground/10 rounded-full border p-2.5 transition-colors hover:text-blue-700 dark:hover:text-blue-400"
           aria-label="LinkedIn Profile"
         >
           <Linkedin className="h-4 w-4" />

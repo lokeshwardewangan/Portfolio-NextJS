@@ -39,7 +39,7 @@ export const MetricCard = ({
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
       className={cn(
-        "group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/10 hover:shadow-2xl",
+        "group border-border bg-foreground/5 hover:border-border relative flex flex-col justify-between overflow-hidden rounded-2xl border p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl",
         className
       )}
     >
@@ -61,13 +61,13 @@ export const MetricCard = ({
                 <ExternalLink
                   size={14}
                   aria-hidden="true"
-                  className="ml-1.5 inline-block align-middle text-purple-400 transition-colors group-hover:text-purple-300"
+                  className="ml-1.5 inline-block align-middle text-purple-700 transition-colors group-hover:text-purple-700 dark:text-purple-400 dark:group-hover:text-purple-300"
                 />
               )}
             </h3>
           </div>
           <div className="mt-2">
-            <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl 2xl:text-4xl">
+            <span className="text-foreground text-2xl font-bold tracking-tight sm:text-3xl 2xl:text-4xl">
               {value}
             </span>
           </div>
@@ -84,7 +84,7 @@ export const MetricCard = ({
               stroke="currentColor"
               strokeWidth="6"
               fill="transparent"
-              className="text-white/10"
+              className="text-foreground/10"
             />
             {/* Progress Circle with Animation */}
             <motion.circle
@@ -108,15 +108,19 @@ export const MetricCard = ({
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="type-nums text-[10px] font-bold text-white/80">{score}</span>
+            <span className="type-nums text-foreground/80 text-[10px] font-bold">{score}</span>
           </div>
         </div>
       </div>
 
       {/* Loading Bar (Visual Flourish) */}
       <div className="mt-4 flex flex-col gap-1">
-        {subtext && <p className="text-muted-foreground/70 font-mono text-xs">{subtext}</p>}
-        <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-white/5">
+        {subtext && (
+          <p className="text-muted-foreground dark:text-muted-foreground/70 font-mono text-xs">
+            {subtext}
+          </p>
+        )}
+        <div className="bg-foreground/5 mt-2 h-1 w-full overflow-hidden rounded-full">
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${score}%` }}

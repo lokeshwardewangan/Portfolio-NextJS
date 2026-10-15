@@ -34,7 +34,7 @@ export const ReactProjects = ({ projects }: { projects: Project[] }) => {
         <motion.div
           key={project.id}
           variants={item}
-          className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/5 transition-colors hover:border-white/10 hover:bg-white/10"
+          className="group border-border bg-foreground/5 hover:border-border hover:bg-foreground/10 relative flex h-full flex-col overflow-hidden rounded-2xl border transition-colors"
         >
           {/* Image */}
           <div className="relative aspect-video w-full overflow-hidden">
@@ -69,10 +69,10 @@ export const ReactProjects = ({ projects }: { projects: Project[] }) => {
 
           {/* Content */}
           <div className="flex flex-1 flex-col p-5">
-            <h3 className="mb-2 text-base font-bold text-white sm:text-lg 2xl:text-xl">
+            <h3 className="text-foreground mb-2 text-base font-bold sm:text-lg 2xl:text-xl">
               {project.title}
             </h3>
-            <p className="mb-4 line-clamp-3 flex-1 text-xs leading-relaxed text-white/60 2xl:text-sm">
+            <p className="text-muted-foreground dark:text-foreground/60 mb-4 line-clamp-3 flex-1 text-xs leading-relaxed 2xl:text-sm">
               {project.description}
             </p>
 

@@ -6,10 +6,22 @@ import Typed from "typed.js";
 type TypedWord = { text: string; gradient: string };
 
 const TYPED_WORDS: TypedWord[] = [
-  { text: "Scalable Systems", gradient: "from-pink-500 to-orange-400" },
-  { text: "AI-Powered Products", gradient: "from-yellow-400 to-amber-500" },
-  { text: "Web Apps", gradient: "from-violet-500 to-pink-500" },
-  { text: "Modern Interfaces", gradient: "from-cyan-400 to-blue-500" },
+  {
+    text: "Scalable Systems",
+    gradient: "from-pink-700 dark:from-pink-500 to-orange-700 dark:to-orange-400",
+  },
+  {
+    text: "AI-Powered Products",
+    gradient: "from-yellow-700 dark:from-yellow-400 to-amber-700 dark:to-amber-500",
+  },
+  {
+    text: "Web Apps",
+    gradient: "from-violet-700 dark:from-violet-500 to-pink-700 dark:to-pink-500",
+  },
+  {
+    text: "Modern Interfaces",
+    gradient: "from-cyan-700 dark:from-cyan-400 to-blue-700 dark:to-blue-500",
+  },
 ];
 
 export const TypedHeading = () => {

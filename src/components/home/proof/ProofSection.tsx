@@ -6,7 +6,7 @@ import { MetricCard } from "./MetricCard";
 
 export const ProofSection = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-black/20 px-6 py-12 lg:px-12 lg:py-12">
+    <section className="bg-card/80 relative w-full overflow-hidden px-6 py-12 lg:px-12 lg:py-12 dark:bg-black/20">
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 h-[400px] w-[400px] rounded-full bg-emerald-500/5 blur-[100px]" />
       <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-[400px] w-[400px] rounded-full bg-blue-500/5 blur-[100px]" />
@@ -21,11 +21,11 @@ export const ProofSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-2xl font-bold tracking-wide sm:text-3xl 2xl:text-4xl">
-              <span className="bg-linear-to-r from-emerald-400 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-700 via-teal-700 to-cyan-700 bg-clip-text text-transparent dark:from-emerald-400 dark:via-teal-500 dark:to-cyan-500">
                 Proof of Skill
               </span>
             </h2>
-            <p className="text-muted-foreground/80 max-w-xl text-xs sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 max-w-xl text-xs sm:text-xs 2xl:text-base">
               Verified performance metrics and technical evaluation benchmarks.
               <br className="hidden sm:block" />
               Real measurements backing full-stack and modern web engineering capabilities.

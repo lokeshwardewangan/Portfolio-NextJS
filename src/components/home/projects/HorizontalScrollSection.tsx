@@ -30,7 +30,7 @@ export const HorizontalScrollSection = ({ projects }: { projects: Project[] }) =
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="w-[280px]! md:w-[320px]!">
-            <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-transform hover:scale-[1.02]">
+            <div className="group border-border bg-foreground/5 relative flex h-full flex-col overflow-hidden rounded-xl border transition-transform hover:scale-[1.02]">
               {/* Image */}
               <div className="relative aspect-4/3 w-full overflow-hidden">
                 <Image
@@ -66,8 +66,10 @@ export const HorizontalScrollSection = ({ projects }: { projects: Project[] }) =
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-4">
-                <h3 className="mb-1 text-lg font-bold text-white">{project.title}</h3>
-                <p className="mb-3 line-clamp-2 text-xs text-white/60">{project.description}</p>
+                <h3 className="text-foreground mb-1 text-lg font-bold">{project.title}</h3>
+                <p className="text-muted-foreground dark:text-foreground/60 mb-3 line-clamp-2 text-xs">
+                  {project.description}
+                </p>
 
                 <div className="mt-auto flex flex-wrap items-center gap-1">
                   {project.techStack.map((t) => (

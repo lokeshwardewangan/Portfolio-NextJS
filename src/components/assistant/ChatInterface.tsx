@@ -39,7 +39,7 @@ const renderMessageContent = (content: string) => {
                 href={nextPartIsUrl}
                 target={nextPartIsUrl.startsWith("http") ? "_blank" : "_self"}
                 rel={nextPartIsUrl.startsWith("http") ? "noopener noreferrer" : ""}
-                className="font-medium break-all text-purple-300 underline decoration-purple-400 transition-opacity hover:text-purple-200"
+                className="font-medium break-all text-purple-700 underline decoration-purple-400 transition-opacity hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200"
               >
                 {part}
               </a>
@@ -61,7 +61,7 @@ const renderMessageContent = (content: string) => {
                       href={up}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium break-all text-purple-300 underline decoration-purple-400 transition-opacity hover:text-purple-200"
+                      className="font-medium break-all text-purple-700 underline decoration-purple-400 transition-opacity hover:text-purple-700 dark:text-purple-300 dark:hover:text-purple-200"
                     >
                       {up}
                     </a>
@@ -74,7 +74,7 @@ const renderMessageContent = (content: string) => {
                     {boldParts.map((bp, l) => {
                       if (l % 2 === 1) {
                         return (
-                          <strong key={l} className="font-bold text-zinc-100">
+                          <strong key={l} className="text-foreground font-bold">
                             {bp}
                           </strong>
                         );
@@ -141,7 +141,7 @@ export function ChatInterface() {
   };
 
   return (
-    <div className="flex h-full flex-col bg-zinc-950/50">
+    <div className="bg-muted/50 flex h-full flex-col dark:bg-zinc-950/50">
       <div className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-800 flex-1 space-y-4 overflow-x-hidden overflow-y-auto p-4">
         <AnimatePresence initial={false}>
           {messages.length === 0 && (
@@ -155,8 +155,8 @@ export function ChatInterface() {
                 <Image src={botAvatar} alt="Lokeshwar AI" className="h-full w-full object-cover" />
               </div>
               <div className="max-w-[280px] space-y-2">
-                <p className="text-sm font-medium text-zinc-200">Hi 👋 I’m Lokeshwar AI.</p>
-                <p className="text-xs text-zinc-400">
+                <p className="text-foreground text-sm font-medium">Hi 👋 I’m Lokeshwar AI.</p>
+                <p className="text-muted-foreground text-xs">
                   I can quickly summarize his skills, experience, and availability.
                 </p>
               </div>
@@ -170,12 +170,14 @@ export function ChatInterface() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     className="mt-6 rounded-lg border border-indigo-500/30 bg-indigo-500/10 p-3"
                   >
-                    <p className="text-xs text-indigo-300">Need a quick 20-second summary?</p>
+                    <p className="text-xs text-indigo-700 dark:text-indigo-300">
+                      Need a quick 20-second summary?
+                    </p>
                     <button
                       onClick={() =>
                         handleSuggestionClick("Give me a 20-second summary of your resume.")
                       }
-                      className="mt-2 text-xs font-semibold text-indigo-400 transition-colors hover:text-indigo-300"
+                      className="mt-2 text-xs font-semibold text-indigo-700 transition-colors hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
                     >
                       Yes, summarize →
                     </button>
@@ -197,8 +199,8 @@ export function ChatInterface() {
                 <div
                   className={`max-w-[85%] min-w-0 rounded-2xl px-4 py-3 text-sm leading-relaxed break-words whitespace-pre-wrap ${
                     m.role === "user"
-                      ? "rounded-br-sm bg-zinc-800 text-zinc-100"
-                      : "rounded-bl-sm border border-purple-500/20 bg-linear-to-br from-indigo-500/10 to-purple-500/10 text-zinc-300"
+                      ? "bg-muted text-foreground rounded-br-sm dark:bg-zinc-800"
+                      : "text-foreground rounded-bl-sm border border-purple-500/20 bg-linear-to-br from-indigo-500/10 to-purple-500/10"
                   }`}
                 >
                   {m.role === "assistant" && (
@@ -208,7 +210,7 @@ export function ChatInterface() {
                         alt="Lokeshwar AI"
                         className="h-5 w-5 rounded-full border border-purple-500/30 object-cover"
                       />
-                      <span className="bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-xs font-bold text-transparent">
+                      <span className="bg-linear-to-r from-indigo-700 to-purple-700 bg-clip-text text-xs font-bold text-transparent dark:from-indigo-400 dark:to-purple-400">
                         Lokeshwar AI
                       </span>
                     </div>
@@ -241,7 +243,7 @@ export function ChatInterface() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-4 flex justify-start"
             >
-              <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-purple-500/20 bg-linear-to-br from-indigo-500/10 to-purple-500/10 px-4 py-3 text-sm text-zinc-300">
+              <div className="text-foreground max-w-[85%] rounded-2xl rounded-bl-sm border border-purple-500/20 bg-linear-to-br from-indigo-500/10 to-purple-500/10 px-4 py-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Image
                     src={botAvatar}
@@ -264,11 +266,13 @@ export function ChatInterface() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-4 flex justify-start"
             >
-              <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+              <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-300">
                 <div className="mb-1 flex items-center gap-2">
-                  <span className="text-xs font-semibold text-red-400">⚠ Connection Issue</span>
+                  <span className="text-xs font-semibold text-red-700 dark:text-red-400">
+                    ⚠ Connection Issue
+                  </span>
                 </div>
-                <p className="text-xs text-red-300/80">
+                <p className="text-xs text-red-700/80 dark:text-red-300/80">
                   {error.message.includes("429")
                     ? "Too many messages — please wait a moment before trying again."
                     : "Something went wrong. Please try sending your message again."}
@@ -280,7 +284,7 @@ export function ChatInterface() {
         </AnimatePresence>
       </div>
 
-      <div className="border-t border-white/5 bg-zinc-950/50 p-4 backdrop-blur-md">
+      <div className="border-border bg-muted/50 border-t p-4 backdrop-blur-md dark:bg-zinc-950/50">
         <div className="relative flex w-full min-w-0 items-center gap-2">
           <div className={`relative w-full ${isLoading ? "pointer-events-none opacity-60" : ""}`}>
             <PlaceholdersAndVanishInput
@@ -296,7 +300,7 @@ export function ChatInterface() {
             />
             {isLoading && (
               <div className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
-                <Loader2 className="h-4 w-4 animate-spin text-purple-400" />
+                <Loader2 className="h-4 w-4 animate-spin text-purple-700 dark:text-purple-400" />
               </div>
             )}
           </div>

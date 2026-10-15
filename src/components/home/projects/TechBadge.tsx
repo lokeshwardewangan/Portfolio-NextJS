@@ -15,7 +15,7 @@ export const TechBadge = ({ name, className, small = false }: TechBadgeProps) =>
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={cn(
-        "inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 font-medium text-white/80 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/10 hover:text-white",
+        "border-border bg-foreground/5 text-foreground/80 hover:border-border hover:bg-foreground/10 hover:text-foreground inline-flex items-center justify-center rounded-full border font-medium backdrop-blur-sm transition-colors",
         small ? "px-2.5 py-0.5 text-xs" : "px-3 py-1 text-sm",
         className
       )}

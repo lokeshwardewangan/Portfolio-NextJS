@@ -68,9 +68,14 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${overpass.variable} ${breeSerif.variable} font-overpass dark antialiased`}
+        className={`${overpass.variable} ${breeSerif.variable} font-overpass antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <QueryProvider>
             <TooltipProvider>
               <TopNavbar />

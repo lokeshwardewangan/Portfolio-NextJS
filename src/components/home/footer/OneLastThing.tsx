@@ -17,11 +17,11 @@ export const OneLastThing = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center gap-6"
         >
-          <div className="rounded-full border border-white/5 bg-white/5 p-3 backdrop-blur-sm">
-            <Sparkles size={20} className="text-yellow-400" />
+          <div className="border-border bg-foreground/5 rounded-full border p-3 backdrop-blur-sm">
+            <Sparkles size={20} className="text-yellow-700 dark:text-yellow-400" />
           </div>
 
-          <h2 className="text-2xl leading-tight font-medium text-white/90 md:text-3xl">
+          <h2 className="text-foreground/90 text-2xl leading-tight font-medium md:text-3xl">
             &quot;If you scrolled this far, <br className="hidden sm:block" />
             we’ll probably get along.&quot;
           </h2>

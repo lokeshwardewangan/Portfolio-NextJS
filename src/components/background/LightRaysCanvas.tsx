@@ -1,11 +1,16 @@
+"use client";
+
+import { useTheme } from "next-themes";
 import LightRays from "../LightRays";
 
 export function LightRaysCanvas() {
+  const { resolvedTheme } = useTheme();
+
   return (
-    <div className="fixed h-full w-full">
+    <div className="pointer-events-none fixed h-full w-full opacity-40 dark:opacity-100">
       <LightRays
         raysOrigin="top-center"
-        raysColor="#ffffff"
+        raysColor={resolvedTheme === "dark" ? "#ffffff" : "#8b5cf6"}
         raysSpeed={1}
         lightSpread={0.5}
         rayLength={3}

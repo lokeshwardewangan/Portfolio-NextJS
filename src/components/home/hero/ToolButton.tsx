@@ -23,7 +23,7 @@ export const ToolButton = ({
       className={`flex cursor-pointer items-center gap-2 rounded-full px-6 py-2 text-sm font-medium transition-all duration-200 ${
         isPrimary
           ? // Primary: Pink -> Purple Gradient, Flat, No Shadow
-            "bg-linear-to-r from-pink-500 to-purple-600 text-white hover:opacity-90"
+            "bg-linear-to-r from-pink-600 to-purple-700 text-white hover:opacity-90 dark:from-pink-500 dark:to-purple-600"
           : // Secondary: Transparent, Border
             "text-foreground hover:bg-secondary/20 border border-gray-300 bg-transparent dark:border-gray-700"
       } ${className} `}

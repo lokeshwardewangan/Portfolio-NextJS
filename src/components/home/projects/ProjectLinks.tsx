@@ -46,7 +46,7 @@ export const ProjectLinks = ({ liveLink, repoLink, className, title }: ProjectLi
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:border-white/20 hover:bg-black/70 hover:text-white"
+            className="border-border hover:border-border flex items-center gap-2 rounded-lg border bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors hover:bg-black/70 hover:text-white"
           >
             <Github size={16} />
             <span>Code</span>

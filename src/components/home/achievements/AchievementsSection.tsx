@@ -42,7 +42,7 @@ const certifications = [
 
 export const AchievementsSection = () => {
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-black/10 px-6 py-12 lg:px-12 lg:py-20">
+    <section className="bg-card/80 relative z-10 w-full overflow-hidden px-6 py-12 lg:px-12 lg:py-20 dark:bg-black/10">
       <div className="container mx-auto max-w-4xl 2xl:max-w-7xl">
         <div className="mb-12 text-center lg:mb-16">
           <motion.div
@@ -52,11 +52,11 @@ export const AchievementsSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-3xl font-bold tracking-wide sm:text-4xl 2xl:text-5xl">
-              <span className="bg-linear-to-r from-amber-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-amber-700 via-yellow-700 to-orange-700 bg-clip-text text-transparent dark:from-amber-400 dark:via-yellow-400 dark:to-orange-400">
                 Milestones & Recognition
               </span>
             </h2>
-            <p className="text-muted-foreground/80 text-xs tracking-wide sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 text-xs tracking-wide sm:text-xs 2xl:text-base">
               Awards, certifications, and moments where hard work paid off.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ export const AchievementsSection = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Achievements Column */}
           <div className="flex flex-col gap-6">
-            <h3 className="mb-2 flex items-center gap-3 text-xl font-bold text-white">
+            <h3 className="text-foreground mb-2 flex items-center gap-3 text-xl font-bold">
               <Medal className="text-yellow-500" />
               Key Achievements
             </h3>
@@ -76,7 +76,7 @@ export const AchievementsSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-md transition-all hover:border-white/20 hover:bg-black/40"
+                className="group border-border bg-card/80 hover:border-border hover:bg-card/80 relative overflow-hidden rounded-2xl border p-6 backdrop-blur-md transition-all dark:bg-black/20 dark:hover:bg-black/40"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -88,13 +88,13 @@ export const AchievementsSection = () => {
                     <achievement.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-lg font-bold text-white">
+                    <h4 className="text-foreground mb-2 text-lg font-bold">
                       {achievement.link ? (
                         <a
                           href={achievement.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 transition-colors hover:text-blue-400"
+                          className="inline-flex items-center gap-1.5 transition-colors hover:text-blue-700 dark:hover:text-blue-400"
                         >
                           {achievement.title}
                           <ExternalLink className="h-4 w-4" />
@@ -103,7 +103,7 @@ export const AchievementsSection = () => {
                         achievement.title
                       )}
                     </h4>
-                    <p className="text-sm leading-relaxed text-neutral-400">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {achievement.description}
                     </p>
                   </div>
@@ -121,11 +121,11 @@ export const AchievementsSection = () => {
 
           {/* Certifications Column */}
           <div className="flex flex-col gap-6">
-            <h3 className="mt-8 mb-2 flex items-center gap-3 text-xl font-bold text-white lg:mt-0">
+            <h3 className="text-foreground mt-8 mb-2 flex items-center gap-3 text-xl font-bold lg:mt-0">
               <Award className="text-blue-500" />
               Certifications
             </h3>
-            <div className="flex h-full flex-col justify-center gap-6 rounded-2xl border border-white/10 bg-black/20 p-8 backdrop-blur-md">
+            <div className="border-border bg-card/80 flex h-full flex-col justify-center gap-6 rounded-2xl border p-8 backdrop-blur-md dark:bg-black/20">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -135,14 +135,14 @@ export const AchievementsSection = () => {
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   className="group flex items-center gap-4"
                 >
-                  <div className="shrink-0 rounded-full bg-emerald-500/20 p-2 text-emerald-400 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
+                  <div className="shrink-0 rounded-full bg-emerald-500/20 p-2 text-emerald-700 transition-colors group-hover:bg-emerald-700 group-hover:text-white dark:text-emerald-400">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
                   <a
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-base text-neutral-300 transition-colors group-hover:text-white hover:text-blue-400 hover:underline"
+                    className="text-foreground group-hover:text-foreground flex items-center gap-1.5 text-base transition-colors hover:text-blue-700 hover:underline dark:hover:text-blue-400"
                   >
                     {cert.title}
                     <ExternalLink className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />

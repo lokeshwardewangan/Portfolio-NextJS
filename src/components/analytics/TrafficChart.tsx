@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import type { ApexOptions } from "apexcharts";
+import { useTheme } from "next-themes";
 
 // Dynamically import ApexCharts to avoid SSR issues
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
@@ -10,6 +11,10 @@ import { useAnalytics } from "@/hooks/analytics/useAnalytics";
 import { ChartSkeleton } from "@/components/analytics/AnalyticsSkeleton";
 
 const TrafficChart = () => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+  const chartColor = isDark ? "#818cf8" : "#4f46e5";
+  const labelColor = isDark ? "#94a3b8" : "#475569";
   const { data: analytics, isLoading, isError } = useAnalytics();
 
   if (isLoading) return <ChartSkeleton />;
@@ -47,14 +52,14 @@ const TrafficChart = () => {
       },
       fontFamily: "inherit",
     },
-    colors: ["#818cf8"], // Indigo-400 - distinct but soft
+    colors: [chartColor],
     dataLabels: {
       enabled: false,
     },
     stroke: {
       curve: "smooth",
       width: 3,
-      colors: ["#818cf8"],
+      colors: [chartColor],
     },
     fill: {
       type: "gradient",
@@ -66,7 +71,7 @@ const TrafficChart = () => {
       },
     },
     grid: {
-      borderColor: "#334155", // Slate-700
+      borderColor: isDark ? "#334155" : "#e2e8f0",
       strokeDashArray: 4,
       yaxis: {
         lines: {
@@ -95,7 +100,7 @@ const TrafficChart = () => {
       },
       labels: {
         style: {
-          colors: "#94a3b8", // Slate-400
+          colors: labelColor,
           fontSize: "12px",
         },
       },
@@ -109,17 +114,17 @@ const TrafficChart = () => {
     yaxis: {
       labels: {
         style: {
-          colors: "#94a3b8", // Slate-400
+          colors: labelColor,
           fontSize: "12px",
           fontFamily: "inherit",
         },
       },
     },
     theme: {
-      mode: "dark",
+      mode: isDark ? "dark" : "light",
     },
     tooltip: {
-      theme: "dark",
+      theme: isDark ? "dark" : "light",
       style: {
         fontSize: "12px",
       },
@@ -133,15 +138,15 @@ const TrafficChart = () => {
   };
 
   return (
-    <div className="h-full w-full rounded-xl border border-slate-800 bg-slate-900/50 p-6 shadow-xl backdrop-blur-sm">
+    <div className="border-border bg-muted/50 h-full w-full rounded-xl border p-6 shadow-xl backdrop-blur-sm dark:bg-slate-900/50">
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-slate-100">Monthly Website Traffic</h3>
-        <p className="text-sm text-slate-400">Last 6 months</p>
+        <h3 className="text-foreground text-lg font-semibold">Monthly Website Traffic</h3>
+        <p className="text-muted-foreground text-sm">Last 6 months</p>
       </div>
 
       <div className="h-[250px] w-full sm:h-[350px]">
         {isError ? (
-          <div className="flex h-full items-center justify-center text-sm text-slate-400">
+          <div className="text-muted-foreground flex h-full items-center justify-center text-sm">
             Failed to load traffic data
           </div>
         ) : (

@@ -32,7 +32,7 @@ export const TechStackPills = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.25, delay: 0.25 + i * 0.04 }}
           whileHover={{ scale: 1.03, y: -0.5 }}
-          className="inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.02] px-2 py-[2px] text-[0.68rem] font-normal tracking-wide text-neutral-400 backdrop-blur-xs transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-neutral-200"
+          className="border-border bg-foreground/[0.02] text-muted-foreground hover:border-border hover:bg-foreground/[0.06] hover:text-foreground inline-flex items-center gap-1 rounded-full border px-2 py-[2px] text-[0.68rem] font-normal tracking-wide backdrop-blur-xs transition-colors"
         >
           <span className={`h-1 w-1 rounded-full ${dotColor}`} />
           {label}

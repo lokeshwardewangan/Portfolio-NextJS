@@ -14,6 +14,7 @@ import { useState } from "react";
 import LokeshwarImage from "@/assets/images/transition/navbar-logo.jpeg";
 import { cn } from "@/lib/utils";
 import { GithubBadge } from "./GithubBadge";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 import { usePathname } from "next/navigation";
 
@@ -48,6 +49,7 @@ export function TopNavbar() {
         <NavbarLogo url={LokeshwarImage} />
         <NavItems items={navItems} />
         <div className="relative z-50 flex items-center gap-4">
+          <ThemeToggle />
           <GithubBadge />
         </div>
       </NavBody>
@@ -56,10 +58,13 @@ export function TopNavbar() {
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo url={LokeshwarImage} />
-          <MobileNavToggle
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          <div className="relative z-50 flex items-center gap-3">
+            <ThemeToggle />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu isOpen={isMobileMenuOpen}>

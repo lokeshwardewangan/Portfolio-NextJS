@@ -10,7 +10,7 @@ const TrafficChart = dynamic(() => import("@/components/analytics/TrafficChart")
   loading: () => (
     <div
       role="status"
-      className="flex h-full w-full items-center justify-center rounded-xl border border-slate-800 bg-slate-900 p-6 text-slate-300 shadow-xl"
+      className="border-border bg-muted text-foreground flex h-full w-full items-center justify-center rounded-xl border p-6 shadow-xl dark:bg-slate-900"
     >
       Loading Chart Analytics...
     </div>
@@ -32,12 +32,12 @@ export const FunStatsSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-2xl font-bold tracking-wide sm:text-3xl 2xl:text-4xl">
-              <span className="bg-linear-to-r from-violet-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-violet-700 via-purple-700 to-indigo-700 bg-clip-text text-transparent dark:from-violet-400 dark:via-purple-500 dark:to-indigo-500">
                 Website Traffic Overview
               </span>
             </h2>
 
-            <p className="text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
               A snapshot of real user traffic, engagement metrics, and month-over-month growth
               across the platform.
             </p>
@@ -51,7 +51,7 @@ export const FunStatsSection = () => {
             ) : (
               <div
                 role="status"
-                className="flex h-full w-full items-center justify-center rounded-xl border border-slate-800 bg-slate-900 p-6 text-slate-300 shadow-xl"
+                className="border-border bg-muted text-foreground flex h-full w-full items-center justify-center rounded-xl border p-6 shadow-xl dark:bg-slate-900"
               >
                 Loading Chart Analytics...
               </div>

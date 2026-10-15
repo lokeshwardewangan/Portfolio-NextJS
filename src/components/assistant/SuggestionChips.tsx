@@ -24,7 +24,7 @@ export function SuggestionChips({ onSelect }: SuggestionChipsProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1, duration: 0.3 }}
           onClick={() => onSelect(suggestion)}
-          className="rounded-full border border-zinc-700/50 bg-zinc-800/30 px-3 py-1.5 text-xs font-medium text-zinc-300 transition-all hover:border-purple-500/50 hover:bg-purple-500/10 hover:text-purple-300"
+          className="border-border bg-muted/30 text-foreground rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:border-purple-500/50 hover:bg-purple-500/10 hover:text-purple-700 dark:bg-zinc-800/30 dark:hover:text-purple-300"
         >
           {suggestion}
         </motion.button>

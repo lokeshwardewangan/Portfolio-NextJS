@@ -17,7 +17,7 @@ export const RealityCheckSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-4 text-xl font-bold tracking-wide sm:text-2xl 2xl:text-4xl">
-              <span className="bg-linear-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-yellow-700 via-orange-700 to-red-500 bg-clip-text text-transparent dark:from-yellow-400 dark:via-orange-500">
                 Quick Frontend Reality Check
               </span>
             </h2>

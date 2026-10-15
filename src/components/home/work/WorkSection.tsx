@@ -104,8 +104,8 @@ const TraitButton = ({ trait, isActive, index, onActivate }: TraitButtonProps) =
         "group relative flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left",
         "transition-all duration-300 2xl:gap-4 2xl:px-5 2xl:py-4",
         isActive
-          ? "border-white/10 bg-white/[0.06] shadow-lg"
-          : "border-transparent hover:border-white/5 hover:bg-white/[0.03]"
+          ? "border-border bg-foreground/[0.06] shadow-lg"
+          : "hover:border-border hover:bg-foreground/[0.03] border-transparent"
       )}
     >
       {/* Accent bar */}
@@ -122,13 +122,15 @@ const TraitButton = ({ trait, isActive, index, onActivate }: TraitButtonProps) =
       <div
         className={cn(
           "shrink-0 rounded-lg p-2 transition-all duration-300",
-          isActive ? `bg-gradient-to-br ${trait.from} ${trait.via} ${trait.to}` : "bg-white/[0.05]"
+          isActive
+            ? `bg-gradient-to-br ${trait.from} ${trait.via} ${trait.to}`
+            : "bg-foreground/[0.05]"
         )}
       >
         <Icon
           className={cn(
             "h-3.5 w-3.5 transition-colors sm:h-4 sm:w-4 2xl:h-5 2xl:w-5",
-            isActive ? "text-white" : "text-muted-foreground group-hover:text-white/70"
+            isActive ? "text-white" : "text-muted-foreground group-hover:text-foreground/70"
           )}
         />
       </div>
@@ -137,7 +139,7 @@ const TraitButton = ({ trait, isActive, index, onActivate }: TraitButtonProps) =
       <span
         className={cn(
           "text-xs font-medium transition-colors sm:text-sm 2xl:text-base",
-          isActive ? "text-white" : "text-muted-foreground group-hover:text-white/80"
+          isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground/80"
         )}
       >
         {trait.title}
@@ -149,7 +151,7 @@ const TraitButton = ({ trait, isActive, index, onActivate }: TraitButtonProps) =
           layoutId="trail-arrow"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="ml-auto text-xs text-white/30"
+          className="text-foreground/30 ml-auto text-xs"
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >
           →
@@ -174,7 +176,7 @@ const DetailPanel = ({ trait, index }: DetailPanelProps) => {
       className="relative flex h-full flex-col justify-between gap-6"
     >
       {/* Index watermark */}
-      <span className="absolute top-0 right-0 font-mono text-[5rem] leading-none font-black text-white/[0.04] select-none 2xl:text-[7rem]">
+      <span className="text-foreground/[0.04] absolute top-0 right-0 font-mono text-[5rem] leading-none font-black select-none 2xl:text-[7rem]">
         0{index + 1}
       </span>
 
@@ -193,7 +195,7 @@ const DetailPanel = ({ trait, index }: DetailPanelProps) => {
       {/* Content */}
       <div className="flex flex-col gap-3">
         <div className={cn("h-0.5 w-10 rounded-full bg-gradient-to-r", trait.from, trait.to)} />
-        <h3 className="text-lg font-bold text-white sm:text-xl 2xl:text-3xl">{trait.title}</h3>
+        <h3 className="text-foreground text-lg font-bold sm:text-xl 2xl:text-3xl">{trait.title}</h3>
         <p className="text-muted-foreground text-xs leading-relaxed sm:text-sm 2xl:text-base">
           {trait.description}
         </p>
@@ -204,7 +206,7 @@ const DetailPanel = ({ trait, index }: DetailPanelProps) => {
         {trait.detail.split(", ").map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/50"
+            className="border-border bg-foreground/[0.04] text-muted-foreground dark:text-foreground/50 rounded-full border px-2.5 py-0.5 text-[10px] font-medium tracking-wide"
           >
             {tag}
           </span>
@@ -219,7 +221,7 @@ export const WorkSection = () => {
   const activeIndex = TRAITS.findIndex((t) => t.id === activeTrait.id);
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-black/5 px-6 py-16 lg:px-12 lg:py-20">
+    <section className="bg-card/80 relative z-10 w-full overflow-hidden px-6 py-16 lg:px-12 lg:py-20 dark:bg-black/5">
       <div className="mx-auto max-w-4xl 2xl:max-w-7xl">
         {/* Header */}
         <motion.div
@@ -233,7 +235,7 @@ export const WorkSection = () => {
             Engineering principles
           </p>
           <h2 className="text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl 2xl:text-4xl">
-            <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-700 via-amber-700 to-yellow-700 bg-clip-text text-transparent dark:from-orange-400 dark:via-amber-400 dark:to-yellow-400">
               How I Actually Work
             </span>
           </h2>
@@ -256,7 +258,7 @@ export const WorkSection = () => {
 
           {/* Right — detail panel */}
           <div className="lg:col-span-7">
-            <div className="relative min-h-[280px] overflow-hidden rounded-2xl border border-white/[0.08] bg-black/30 p-8 backdrop-blur-xl md:min-h-[320px] md:p-10 2xl:min-h-[380px] 2xl:p-12">
+            <div className="border-border bg-card/80 relative min-h-[280px] overflow-hidden rounded-2xl border p-8 backdrop-blur-xl md:min-h-[320px] md:p-10 2xl:min-h-[380px] 2xl:p-12 dark:bg-black/30">
               {/* Ambient glow that tracks the active trait */}
               <motion.div
                 key={activeTrait.id + "-glow"}

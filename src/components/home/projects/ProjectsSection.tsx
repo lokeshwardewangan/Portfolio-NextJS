@@ -24,7 +24,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative z-10 w-full overflow-hidden bg-black/5 py-12 md:py-12"
+      className="bg-card/80 relative z-10 w-full overflow-hidden py-12 md:py-12 dark:bg-black/5"
     >
       <div className="container mx-auto max-w-4xl px-4 md:px-6 2xl:max-w-7xl">
         {/* SECTION HEADER */}
@@ -36,11 +36,11 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="mb-4 text-2xl font-bold tracking-wide sm:text-3xl 2xl:text-4xl">
-              <span className="bg-linear-to-r from-rose-400 via-pink-500 to-fuchsia-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-rose-700 via-pink-700 to-fuchsia-700 bg-clip-text text-transparent dark:from-rose-400 dark:via-pink-500 dark:to-fuchsia-500">
                 Selected Works
               </span>
             </h2>
-            <p className="text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
+            <p className="text-muted-foreground dark:text-muted-foreground/80 mx-auto max-w-xl text-xs tracking-wide sm:text-xs 2xl:text-base">
               A collection of projects exploring modern web technologies.
             </p>
           </motion.div>
@@ -49,7 +49,7 @@ export const ProjectsSection = () => {
         {/* 1. FULLSTACK SECTION - 2 Columns */}
         <div className="mb-16 md:mb-24">
           <div className="mb-8 flex items-center gap-3">
-            <h3 className="text-base font-bold text-indigo-400 sm:text-lg 2xl:text-xl">
+            <h3 className="text-base font-bold text-indigo-700 sm:text-lg 2xl:text-xl dark:text-indigo-400">
               01. Fullstack Architecture
             </h3>
             <div className="h-px flex-1 bg-indigo-500/30" />
@@ -65,7 +65,7 @@ export const ProjectsSection = () => {
         {/* 2. REACT SECTION - 3 Columns */}
         <div className="mb-16 md:mb-24">
           <div className="mb-8 flex items-center gap-3">
-            <h3 className="text-base font-bold text-cyan-400 sm:text-lg 2xl:text-xl">
+            <h3 className="text-base font-bold text-cyan-700 sm:text-lg 2xl:text-xl dark:text-cyan-400">
               02. React Ecosystem
             </h3>
             <div className="h-px flex-1 bg-cyan-500/30" />
@@ -77,12 +77,12 @@ export const ProjectsSection = () => {
         {/* 3. JAVASCRIPT SECTION */}
         <div className="mb-6">
           <div className="mb-6 flex items-center gap-3">
-            <h3 className="text-base font-bold text-yellow-400 sm:text-lg 2xl:text-xl">
+            <h3 className="text-base font-bold text-yellow-700 sm:text-lg 2xl:text-xl dark:text-yellow-400">
               03. JavaScript Lab
             </h3>
             <div className="h-px flex-1 bg-yellow-500/30" />
           </div>
-          <p className="mb-6 text-xs text-white/50 sm:text-sm">
+          <p className="text-muted-foreground dark:text-foreground/50 mb-6 text-xs sm:text-sm">
             Smaller experiments and creative coding sketches.
           </p>
         </div>

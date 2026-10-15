@@ -45,13 +45,13 @@ export const QuizCard = () => {
 
       toast.custom(
         () => (
-          <div className="flex w-full max-w-xl items-center gap-4 rounded-xl border border-emerald-500/20 bg-neutral-900/95 p-4 shadow-2xl backdrop-blur-xl">
+          <div className="bg-muted/95 flex w-full max-w-xl items-center gap-4 rounded-xl border border-emerald-500/20 p-4 shadow-2xl backdrop-blur-xl dark:bg-neutral-900/95">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-emerald-500/20">
-              <PartyPopper size={24} className="text-emerald-400" />
+              <PartyPopper size={24} className="text-emerald-700 dark:text-emerald-400" />
             </div>
             <div className="flex-1">
-              <p className="text-lg font-bold text-white">Congratulations! 🚀</p>
-              <p className="text-sm text-neutral-400">
+              <p className="text-foreground text-lg font-bold">Congratulations! 🚀</p>
+              <p className="text-muted-foreground text-sm">
                 You are hired as a frontend developer! Welcome to the team.
               </p>
             </div>
@@ -62,13 +62,13 @@ export const QuizCard = () => {
     } else {
       toast.custom(
         () => (
-          <div className="flex w-full max-w-xl items-center gap-4 rounded-xl border border-red-500/20 bg-neutral-900/95 p-4 shadow-2xl backdrop-blur-xl">
+          <div className="bg-muted/95 flex w-full max-w-xl items-center gap-4 rounded-xl border border-red-500/20 p-4 shadow-2xl backdrop-blur-xl dark:bg-neutral-900/95">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red-500/20">
-              <X size={24} className="text-red-400" />
+              <X size={24} className="text-red-700 dark:text-red-400" />
             </div>
             <div className="flex-1">
-              <p className="text-lg font-bold text-white">So close! 😅</p>
-              <p className="text-sm text-neutral-400">
+              <p className="text-foreground text-lg font-bold">So close! 😅</p>
+              <p className="text-muted-foreground text-sm">
                 0.1 + 0.2 is actually 0.30000000000000004 because of floating point math.
               </p>
             </div>
@@ -87,7 +87,7 @@ export const QuizCard = () => {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="group relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-1 backdrop-blur-xl"
+      className="group border-border bg-foreground/5 relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl border p-1 backdrop-blur-xl"
     >
       <div
         className={cn(
@@ -100,18 +100,18 @@ export const QuizCard = () => {
         )}
       />
 
-      <div className="relative flex flex-col gap-6 rounded-xl border border-white/5 bg-neutral-900/90 p-6 md:p-8">
+      <div className="border-border bg-muted/90 relative flex flex-col gap-6 rounded-xl border p-6 md:p-8 dark:bg-neutral-900/90">
         <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-purple-500/10 p-2 text-purple-400">
+          <div className="rounded-lg bg-purple-500/10 p-2 text-purple-700 dark:text-purple-400">
             {hasAnswered && isCorrect ? <PartyPopper size={22} /> : <HelpCircle size={22} />}
           </div>
           <div className="flex flex-col">
-            <h3 className="text-lg font-bold text-white sm:text-xl">JS Reality Check</h3>
-            <span className="text-xs text-neutral-400">Do you know your coercion?</span>
+            <h3 className="text-foreground text-lg font-bold sm:text-xl">JS Reality Check</h3>
+            <span className="text-muted-foreground text-xs">Do you know your coercion?</span>
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border border-white/5 bg-black/50 p-5 font-mono text-sm leading-relaxed shadow-inner">
+        <div className="border-border bg-card/80 relative overflow-hidden rounded-lg border p-5 font-mono text-sm leading-relaxed shadow-inner dark:bg-black/50">
           {/* Window Dots */}
           <div className="absolute top-3 left-3 flex gap-1.5 opacity-60">
             <div className="h-2.5 w-2.5 rounded-full bg-red-500" />
@@ -120,18 +120,21 @@ export const QuizCard = () => {
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="text-purple-400 italic">&#47;&#47; JavaScript Magic 🪄</p>
-            <div className="text-neutral-300">console.log(</div>
-            <div className="pl-4 text-neutral-300">
-              <span className="text-blue-400">0.1</span> +{" "}
-              <span className="text-blue-400">0.2</span> <span className="text-pink-400">===</span>{" "}
-              <span className="text-blue-400">0.3</span>
+            <p className="text-purple-700 italic dark:text-purple-400">
+              &#47;&#47; JavaScript Magic 🪄
+            </p>
+            <div className="text-foreground">console.log(</div>
+            <div className="text-foreground pl-4">
+              <span className="text-blue-700 dark:text-blue-400">0.1</span> +{" "}
+              <span className="text-blue-700 dark:text-blue-400">0.2</span>{" "}
+              <span className="text-pink-700 dark:text-pink-400">===</span>{" "}
+              <span className="text-blue-700 dark:text-blue-400">0.3</span>
             </div>
-            <div className="text-neutral-300">);</div>
+            <div className="text-foreground">);</div>
           </div>
         </div>
 
-        <p className="text-sm font-medium text-neutral-400 sm:text-base">
+        <p className="text-muted-foreground text-sm font-medium sm:text-base">
           What does the console log?
         </p>
 
@@ -145,21 +148,21 @@ export const QuizCard = () => {
                 "relative flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition-all duration-200",
                 // Default State
                 !hasAnswered &&
-                  "border-white/10 bg-white/5 text-neutral-300 hover:scale-[1.02] hover:border-purple-500/30 hover:bg-purple-500/10",
+                  "border-border bg-foreground/5 text-foreground hover:scale-[1.02] hover:border-purple-500/30 hover:bg-purple-500/10",
                 // Correct State
                 hasAnswered &&
                   option.isCorrect &&
-                  "border-emerald-500/50 bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20",
+                  "border-emerald-500/50 bg-emerald-500/10 text-emerald-700 ring-1 ring-emerald-500/20 dark:text-emerald-400",
                 // Incorrect State (Selected)
                 hasAnswered &&
                   !option.isCorrect &&
                   selected === option.id &&
-                  "border-red-500/50 bg-red-500/10 text-red-400",
+                  "border-red-500/50 bg-red-500/10 text-red-700 dark:text-red-400",
                 // Disabled (Unselected)
                 hasAnswered &&
                   selected !== option.id &&
                   !option.isCorrect &&
-                  "border-white/5 bg-transparent opacity-40 blur-[1px]"
+                  "border-border bg-transparent opacity-40 blur-[1px]"
               )}
             >
               <span>{option.text}</span>
@@ -183,13 +186,13 @@ export const QuizCard = () => {
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               className={cn(
-                "flex items-center justify-center gap-2 rounded-lg bg-white/5 p-2 text-center text-sm font-medium",
-                isCorrect ? "text-emerald-400" : "text-neutral-400"
+                "bg-foreground/5 flex items-center justify-center gap-2 rounded-lg p-2 text-center text-sm font-medium",
+                isCorrect ? "text-emerald-700 dark:text-emerald-400" : "text-muted-foreground"
               )}
             >
               {isCorrect ? (
                 <>
-                  <Trophy size={16} className="text-yellow-400" />
+                  <Trophy size={16} className="text-yellow-700 dark:text-yellow-400" />
                   <span>Correct! Enjoy your weekend.</span>
                 </>
               ) : (

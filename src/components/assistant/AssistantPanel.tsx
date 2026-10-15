@@ -38,7 +38,7 @@ export function AssistantPanel({ isOpen, onClose }: AssistantPanelProps) {
             damping: 25,
             mass: 0.8,
           }}
-          className="fixed bottom-0 left-1/2 z-50 flex h-[85dvh] w-[95vw] origin-bottom -translate-x-1/2 flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-zinc-950/80 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:right-6 sm:bottom-6 sm:left-auto sm:h-[80vh] sm:max-h-[80vh] sm:min-h-[500px] sm:w-[clamp(380px,28vw,480px)] sm:origin-bottom-right sm:translate-x-0 sm:rounded-3xl 2xl:h-[90vh] 2xl:max-h-[90vh]"
+          className="border-border bg-muted/80 fixed bottom-0 left-1/2 z-50 flex h-[85dvh] w-[95vw] origin-bottom -translate-x-1/2 flex-col overflow-hidden rounded-t-2xl border shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:right-6 sm:bottom-6 sm:left-auto sm:h-[80vh] sm:max-h-[80vh] sm:min-h-[500px] sm:w-[clamp(380px,28vw,480px)] sm:origin-bottom-right sm:translate-x-0 sm:rounded-3xl 2xl:h-[90vh] 2xl:max-h-[90vh] dark:bg-zinc-950/80"
         >
           <ShineBorder
             className="inset-0 z-10 p-px"
@@ -48,7 +48,7 @@ export function AssistantPanel({ isOpen, onClose }: AssistantPanelProps) {
           />
 
           {/* Header */}
-          <div className="relative flex items-center justify-between bg-zinc-900/50 px-6 py-5 backdrop-blur-md">
+          <div className="bg-muted/50 relative flex items-center justify-between px-6 py-5 backdrop-blur-md dark:bg-zinc-900/50">
             {/* Subtle gradient bottom border */}
             <div className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-transparent via-purple-500/20 to-transparent" />
 
@@ -58,18 +58,18 @@ export function AssistantPanel({ isOpen, onClose }: AssistantPanelProps) {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                 </span>
-                <h3 className="font-bree text-lg font-semibold tracking-wide text-zinc-100">
+                <h3 className="font-bree text-foreground text-lg font-semibold tracking-wide">
                   Lokeshwar AI
                 </h3>
               </div>
-              <p className="ml-4 text-xs text-zinc-400">Pre-Interview Assistant</p>
+              <p className="text-muted-foreground ml-4 text-xs">Pre-Interview Assistant</p>
             </div>
             <button
               onClick={onClose}
-              className="group rounded-full p-2 transition-colors hover:bg-white/10"
+              className="group hover:bg-foreground/10 rounded-full p-2 transition-colors"
               aria-label="Close panel"
             >
-              <X className="h-5 w-5 text-zinc-400 transition-colors group-hover:text-zinc-100" />
+              <X className="text-muted-foreground group-hover:text-foreground h-5 w-5 transition-colors" />
             </button>
           </div>
 
