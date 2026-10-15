@@ -87,7 +87,7 @@ CRITICAL: Never jump to NONE if the question is professional in nature. Always a
 
 **Education:**
 - **B.Tech in Computer Science & Engineering** from Rungta College of Engineering & Technology, Bhilai (Affiliated to CSVTU) (2021–2025)
-- Graduated with 8.5 CGPA
+- Graduated with 8.7 CGPA
 - Specialized in Software Engineering and Data Structures & Algorithms
 - Built multiple academic projects including an Award-winning Smart Canteen system
 

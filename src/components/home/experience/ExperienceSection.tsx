@@ -87,9 +87,17 @@ const experiences = [
     date: "2021 - 2025",
     description: (
       <>
-        Affiliated to CSVTU &bull; Graduated with 8.5 CGPA. Specialized in Software Engineering and
-        Data Structures &amp; Algorithms. Developed academic projects including the award-winning
-        Smart Canteen system.
+        Affiliated to CSVTU &bull; Graduated with 8.7 CGPA. Specialized in Software Engineering and
+        Data Structures &amp; Algorithms. Developed academic projects including the{" "}
+        <a
+          href="https://smartcanteens.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-emerald-400 underline underline-offset-2 transition-colors duration-200 hover:text-emerald-300"
+        >
+          award-winning Smart Canteen system
+        </a>
+        .
       </>
     ),
     icon: GraduationCap,
