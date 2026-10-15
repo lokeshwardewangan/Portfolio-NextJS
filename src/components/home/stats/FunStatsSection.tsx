@@ -19,7 +19,7 @@ const TrafficChart = dynamic(() => import("@/components/analytics/TrafficChart")
 
 export const FunStatsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "200px" });
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section className="relative z-10 w-full overflow-hidden px-6 py-12 lg:px-12 lg:py-12 2xl:py-20">

@@ -14,9 +14,8 @@ export const HeroCopy = () => (
     <CometPath />
 
     <motion.div
-      initial={{ opacity: 0, y: -6 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
       className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm"
     >
       <span className="relative flex h-2 w-2 shrink-0">
@@ -29,9 +28,8 @@ export const HeroCopy = () => (
     <TypedHeading />
 
     <motion.p
-      initial={{ opacity: 0, y: 10 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.1 }}
       className="text-muted-foreground max-w-xl text-base leading-relaxed sm:text-[1.05rem]"
     >
       I&rsquo;m Lokeshwar Dewangan, Full-stack engineer building{" "}
@@ -48,9 +46,8 @@ export const HeroCopy = () => (
     <FeaturedBadge />
 
     <motion.div
-      initial={{ opacity: 0, y: 5 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
       className="flex flex-wrap items-center justify-center gap-3 pt-0 lg:justify-start"
     >
       <a href="mailto:lokeshwardewangan.dev@gmail.com">

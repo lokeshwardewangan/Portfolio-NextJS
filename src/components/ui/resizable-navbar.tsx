@@ -73,6 +73,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
+      initial={false}
       animate={{
         backdropFilter: visible ? "blur(4px)" : "none",
         boxShadow: visible
@@ -135,6 +136,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
+      initial={false}
       animate={{
         backdropFilter: visible ? "blur(4px)" : "none",
         boxShadow: visible

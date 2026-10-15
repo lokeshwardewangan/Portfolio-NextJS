@@ -6,12 +6,7 @@ import { Github, FolderGit2, Code2 } from "lucide-react";
 export const StatsSticker = () => {
   return (
     <div className="scale_layout relative z-30 my-8 flex w-full justify-center px-6 lg:-mt-16 lg:mb-0">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full max-w-4xl"
-      >
+      <motion.div initial={false} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
         <div className="bg-background/60 supports-backdrop-filter:bg-background/20 overflow-hidden rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(168,85,247,0.15)] backdrop-blur-xl">
           <div className="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
             {/* Github Commits */}

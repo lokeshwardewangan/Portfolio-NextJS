@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 import {
   FullStackProjectsArray,
   ReactFrontendProjectsArray,
@@ -12,10 +13,12 @@ import dynamic from "next/dynamic";
 
 const HorizontalScrollSection = dynamic(
   () => import("./HorizontalScrollSection").then((mod) => mod.HorizontalScrollSection),
-  { ssr: false } // Disable SSR to prevent Swiper's CSS from blocking initial render
+  { ssr: false }
 );
 
 export const ProjectsSection = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const showCarousel = useInView(carouselRef, { once: true, margin: "600px" });
   // Correctly typed data
   const fullstack = FullStackProjectsArray;
   const react = ReactFrontendProjectsArray;
@@ -89,7 +92,9 @@ export const ProjectsSection = () => {
       </div>
 
       {/* Full width container for horizontal scroll */}
-      <HorizontalScrollSection projects={js} />
+      <div ref={carouselRef} className="min-h-[440px]">
+        {showCarousel && <HorizontalScrollSection projects={js} />}
+      </div>
     </section>
   );
 };
